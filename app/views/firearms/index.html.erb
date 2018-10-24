@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Firearms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Typearm</th>
+      <th>Atstus</th>
+      <th>Country</th>
+      <th>Year</th>
+      <th>Caliber</th>
+      <th>Action type</th>
+      <th>Trigger type</th>
+      <th>Feeding mech</th>
+      <th>Barrel l</th>
+      <th>Over l</th>
+      <th>Over l f</th>
+      <th>Em w</th>
+      <th>L w</th>
+      <th>Am cap</th>
+      <th>Fr mat</th>
+      <th>Stock type</th>
+      <th>Img main</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @firearms.each do |firearm| %>
+      <tr>
+        <td><%= firearm.name %></td>
+        <td><%= firearm.typearm %></td>
+        <td><%= firearm.atstus %></td>
+        <td><%= firearm.country %></td>
+        <td><%= firearm.year %></td>
+        <td><%= firearm.caliber %></td>
+        <td><%= firearm.action_type %></td>
+        <td><%= firearm.trigger_type %></td>
+        <td><%= firearm.feeding_mech %></td>
+        <td><%= firearm.barrel_l %></td>
+        <td><%= firearm.over_l %></td>
+        <td><%= firearm.over_l_f %></td>
+        <td><%= firearm.em_w %></td>
+        <td><%= firearm.l_w %></td>
+        <td><%= firearm.am_cap %></td>
+        <td><%= firearm.fr_mat %></td>
+        <td><%= firearm.stock_type %></td>
+        <td><%= firearm.img_main %></td>
+        <td><%= link_to 'Show', firearm %></td>
+        <td><%= link_to 'Edit', edit_firearm_path(firearm) %></td>
+        <td><%= link_to 'Destroy', firearm, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Firearm', new_firearm_path %>

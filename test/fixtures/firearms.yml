@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  typearm: MyString
+  atstus: MyString
+  country: MyString
+  year: 1
+  caliber: 
+  action_type: MyString
+  trigger_type: MyString
+  feeding_mech: MyString
+  barrel_l: 1
+  over_l: 1
+  over_l_f: 1
+  em_w: 1
+  l_w: 1
+  am_cap: 1
+  fr_mat: MyString
+  stock_type: MyString
+  img_main: MyString
+
+two:
+  name: MyString
+  typearm: MyString
+  atstus: MyString
+  country: MyString
+  year: 1
+  caliber: 
+  action_type: MyString
+  trigger_type: MyString
+  feeding_mech: MyString
+  barrel_l: 1
+  over_l: 1
+  over_l_f: 1
+  em_w: 1
+  l_w: 1
+  am_cap: 1
+  fr_mat: MyString
+  stock_type: MyString
+  img_main: MyString

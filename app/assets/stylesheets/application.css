@@ -13,3 +13,88 @@
  *= require_tree .
  *= require_self
  */
+
+
+table {
+    font-family: Arial;
+    border-collapse: collapse;
+}
+table, th, td {
+    border: 1px solid black;
+}
+
+.even {
+  background-color: #F7F7F7;
+}
+
+.odd {
+  background-color: #E6E6E6;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #BE2D2D;
+    width: 100%;
+    }
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 16px;
+}
+li a:visited {
+  color: white;
+}
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+/* Create three equal columns that floats next to each other */
+.column1 {
+    float: left;
+    width: 30%;
+}
+.column2 {
+    float: left;
+    width: 50%;
+}
+.column3 {
+    float: left;
+    width: 20%;
+}
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
+@media screen and (max-width:600px) {
+    .column1 {
+        width: 100%;
+    }
+}
+@media screen and (max-width:600px) {
+    .column2 {
+        width: 100%;
+    }
+}
+@media screen and (max-width:600px) {
+    .column3 { display: none; 
+    }
+}
+

@@ -10,6 +10,30 @@
   </head>
 
   <body>
+
+    <ul>
+      <li><%= link_to("Firearms", root_path) %></li>
+      <li>NEWS<%# link_to("Releases", releases_path) %></li>
+      <li>AMMUNITION<%# link_to "Logout",  logout_path, method: :delete %></li>
+    </ul>
+    <div class="row">
+  <div class="column1">
+    <h2>Column</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+  </div>
+<div class="column2">
     <%= yield %>
+  </div>
+    <div class="column3">
+    <h2>Column</h2>
+    
+  </div>
+</div>
+
   </body>
 </html>
+
+    
+  
+ 
+
