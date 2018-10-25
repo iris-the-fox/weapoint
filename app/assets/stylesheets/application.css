@@ -18,6 +18,7 @@
 table {
     font-family: Arial;
     border-collapse: collapse;
+    width: 100%;
 }
 table, th, td {
     border: 1px solid black;
@@ -83,18 +84,19 @@ li a:hover:not(.active) {
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
-@media screen and (max-width:600px) {
+@media screen and (max-width:700px) {
     .column1 {
         width: 100%;
     }
 }
-@media screen and (max-width:600px) {
+@media screen and (max-width:700px) {
     .column2 {
         width: 100%;
     }
 }
-@media screen and (max-width:600px) {
-    .column3 { display: none; 
+@media screen and (max-width:700px) {
+    .column3 { 
+    	display: none; 
     }
 }
 

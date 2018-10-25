@@ -5,61 +5,75 @@
     <%= @firearm.name %>
 </h1>
 
- <%= image_tag( @firearm.img_main) %>
+ <%= image_tag( @firearm.img_main, width: '100%') %>
 
 
 
   <table>
-<tr class='odd'>
-  <td><strong>Typearm:</strong></td>
-  <td><%= @firearm.typearm %></td>
-<td></td></tr>
-<tr class='even'>
-  <td><strong>Atstus:</strong></td>
-  <td><%= @firearm.atstus %></td>
-<td></td></tr>
-<tr class='odd'>
-  <td><strong>Country:</strong></td>
-  <td><%= @firearm.country %></td><td></td></tr>
-<tr class='even'>
-  <td><strong>Year:</strong></td>
-  <td><%= @firearm.year %></td><td></td></tr>
-<tr class='odd'>
-  <td><strong>Caliber:</strong></td>
-  <td><%= @firearm.caliber %></td><td></td></tr>
-<tr class='even'>
-  <td><strong>Action type:</strong></td>
-  <td><%= @firearm.action_type %></td><td></td></tr>
-<tr class='odd'>
-  <td><strong>Trigger type:</strong></td>
-  <td><%= @firearm.trigger_type %></td><td></td></tr>
-<tr class='even'>
-  <td><strong>Feeding mech:</strong></td>
-  <td><%= @firearm.feeding_mech %></td><td></td></tr>
-<tr class='odd'>
-  <td><strong>Barrel l:</strong></td>
-  <td><%= @firearm.barrel_l %></td><td></td></tr>
-<tr class='even'>
-  <td><strong>Over l:</strong></td>
-  <td><%= @firearm.over_l %></td><td></td></tr>
-<tr class='even'>
-  <td><strong>Over l f:</strong></td>
-  <td><%= @firearm.over_l_f %></td><td></td></tr>
-<tr class='odd'>
-  <td><strong>Em w:</strong></td>
-  <td><%= @firearm.em_w %></td><td></td></tr>
-<tr class='even'>
-  <td><strong>L w:</strong></td>
-  <td><%= @firearm.l_w %></td><td></td></tr>
-<tr class='odd'>
-  <td><strong>Am cap:</strong></td>
-  <td><%= @firearm.am_cap %></td><td></td></tr>
-<tr class='even'>
-  <td><strong>Fr mat:</strong></td>
-  <td><%= @firearm.fr_mat %></td><td></td></tr>
-<tr class='odd'>
-  <td><strong>Stock type:</strong></td>
-  <td><%= @firearm.stock_type %></td><td></td></tr>
+    <tr class='odd'>
+      <td><strong>type:</strong></td>
+      <td><%= @firearm.typearm %></td>
+      <td></td></tr>
+    <tr class='even'>
+      <td><strong>status:</strong></td>
+      <td><%= @firearm.atstus %></td>
+      <td></td></tr>
+    <tr class='odd'>
+      <td><strong>country:</strong></td>
+      <td><%= @firearm.country %></td>
+      <td></td></tr>
+    <tr class='even'>
+      <td><strong>year of appearance:</strong></td>
+      <td><%= @firearm.year %></td>
+      <td></td></tr>
+    <tr class='odd'>
+      <td><strong>caliber:</strong></td>
+      <td><%= @firearm.caliber %></td>
+      <td></td></tr>
+    <tr class='even'>
+      <td><strong>action type:</strong></td>
+      <td><%= @firearm.action_type %></td>
+      <td></td></tr>
+    <tr class='odd'>
+      <td><strong>trigger type:</strong></td>
+      <td><%= @firearm.trigger_type %></td>
+      <td></td></tr>
+    <tr class='even'>
+      <td><strong>feeding mechanism:</strong></td>
+      <td><%= @firearm.feeding_mech %></td>
+      <td></td></tr>
+    <tr class='odd'>
+      <td><strong>barrel length:</strong></td>
+      <td><%= @firearm.barrel_l %></td>
+      <td></td></tr>
+    <tr class='even'>
+      <td><strong>overall length:</strong></td>
+      <td><%= @firearm.over_l %></td>
+      <td></td></tr>
+    <tr class='even'>
+      <td><strong>overall length (folded stock):</strong></td>
+      <td><%= @firearm.over_l_f %></td>
+      <td></td></tr>
+    <tr class='odd'>
+      <td><strong>empty weight:</strong></td>
+      <td><%= @firearm.em_w %></td
+        ><td></td></tr>
+    <tr class='even'>
+      <td><strong>loaded weight:</strong></td>
+      <td><%= @firearm.l_w %></td>
+      <td></td></tr>
+    <tr class='odd'>
+      <td><strong>ammunition capacity:</strong></td>
+      <td><%= @firearm.am_cap %></td>
+      <td></td></tr>
+    <tr class='even'>
+      <td><strong>frame material:</strong></td>
+      <td><%= @firearm.fr_mat %></td>
+      <td></td></tr>
+    <tr class='odd'>
+      <td><strong>stock type:</strong></td>
+      <td><%= @firearm.stock_type %></td>
+      <td></td></tr>
  
 </table>
 
