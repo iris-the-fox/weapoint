@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :choosen_arms
  # resources :sessions, only: [:new, :create, :destroy]
   root to: 'firearms#index'
   resources :firearms

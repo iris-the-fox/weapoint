@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Choosen Arms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Firearm</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @choosen_arms.each do |choosen_arm| %>
+      <tr>
+        <td><%= choosen_arm.firearm_id %></td>
+        <td><%= link_to 'Show', choosen_arm %></td>
+        <td><%= link_to 'Edit', edit_choosen_arm_path(choosen_arm) %></td>
+        <td><%= link_to 'Destroy', choosen_arm, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Choosen Arm', new_choosen_arm_path %>
