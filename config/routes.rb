@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
-  resources :choosen_arms
  # resources :sessions, only: [:new, :create, :destroy]
   root to: 'firearms#index'
   resources :firearms
   get "firearms" => 'firearms#index'
 
-  #resources :bookings, only: [:new, :create, :show]
+  resources :choosen_arms, only: [:new, :create, :show]
 
 #  get "/login" => "sessions#new", as: "login"
  # delete "/logout" => "sessions#destroy", as: "logout"

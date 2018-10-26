@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_24_105719) do
+ActiveRecord::Schema.define(version: 2018_10_26_071131) do
+
+  create_table "choosen_arms", force: :cascade do |t|
+    t.string "firearm_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "firearms", force: :cascade do |t|
     t.string "name"
