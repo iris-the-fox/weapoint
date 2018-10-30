@@ -18,21 +18,19 @@
       <li>AMMUNITION<%# link_to "Logout",  logout_path, method: :delete %></li>
       <li>LEARNING<%# link_to("Releases", releases_path) %></li>
       <li>CONTACT<%# link_to("Releases", releases_path) %></li>
+      <% if logged_in? %>
+      <li><%= link_to "Logout",  logout_path, method: :delete %></li>
+      <% end %>
+
     </ul>
 
     <div class="row">
       <div class="column1">
-        <h2>Column</h2>
-        <%# provide(:title, 'Search Firearms') %>
-        <%# render 'search' %>
-        <li><%= link_to "Logout",  logout_path, method: :delete %></li>
-      </div>
-      <div class="column2">
-        
+              
           <%= yield %>
 
       </div>
-      <div class="column3">
+      <div class="column2">
           <h2>Column</h2>   
           
      </div>

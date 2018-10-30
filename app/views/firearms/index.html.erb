@@ -2,10 +2,20 @@
 
 
 
-<% if !@firearms.nil? %>
-  <%= render 'search_results' %>
-<% end %>
+ <div class="row">
+      <div class="column1_inner">
+        <div class='form_class'>
+       <%= provide(:title, 'Search Firearms') %>
+        <%= render 'search' %>
+      </div>
+      </div>
 
+      <div class="column2_inner">
+         <% if !@firearms.nil? %>
+           <%= render 'search_results' %>
+         <% end %>  
+      </div>
+ </div>
 
 
 <h1>Firearms</h1>

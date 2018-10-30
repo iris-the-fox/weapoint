@@ -66,16 +66,21 @@ li a:hover:not(.active) {
 /* Create three equal columns that floats next to each other */
 .column1 {
     float: left;
-    width: 30%;
+    width: 80%;
 }
 .column2 {
     float: left;
-    width: 50%;
-}
-.column3 {
-    float: left;
     width: 20%;
 }
+
+.column1_inner {
+    float: left;
+    width: 30%;
+}
+.column2_inner {
+    float: left;
+    width: 70%;
+
 /* Clear floats after the columns */
 .row:after {
     content: "";
@@ -100,13 +105,3 @@ li a:hover:not(.active) {
     }
 }
 
-.form_class {
-    width: 80%;
-    background-color: #F7F7F7;
-    border: 2px solid;
-    border-color: #BE2D2D;
-}
-
-.button {
-    color: #BE2D2D;
-}
