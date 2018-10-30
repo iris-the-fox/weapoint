@@ -1,10 +1,10 @@
 class Firearm < ApplicationRecord
   has_many :choosen_arms
  
-  def initialize
-  	@typearm = firearms.typearm
-  	@status = firearms.atstus
-  	@name = firearms.name
+  def initialize(params)
+  	#@typearm = firearms.typearm
+  	#@status = firearms.atstus
+  	#@name = firearms.name
 
   end
 

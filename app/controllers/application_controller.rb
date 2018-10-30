@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :ensure_login
+  before_action :ensure_login, only: [:edit, :update, :destroy]
   
   protect_from_forgery with: :exception
   
