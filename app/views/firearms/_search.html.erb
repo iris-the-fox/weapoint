@@ -1,12 +1,14 @@
-<%= form_tag firearms_path, method: 'get' do %>
+<%= form_tag(firearms_path, method: 'get') do %>
 
   <%= hidden_field_tag :search %>
-  <div >
+  
     <%= select_tag :typearm,  options_for_select(Firearm.all.map {|f| f.typearm}),  prompt: "Type", class: "form_class" %>
-  </div>
+    <%= select_tag :status,  options_for_select(Firearm.all.map {|f| f.atstus}),  prompt: "Status", class: "form_class" %>
+  
    
   <div>
     <%= submit_tag "Search", :name => nil, class: "button" %>
   </div>
 
 <% end %>
+

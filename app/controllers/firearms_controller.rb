@@ -4,6 +4,7 @@ class FirearmsController < ApplicationController
   # GET /firearms
   # GET /firearms.json
   def index
+    @fire = Firearm.all
     @firearms = Firearm.search(params)
   end
 
