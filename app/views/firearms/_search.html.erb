@@ -2,21 +2,21 @@
 
   <%= hidden_field_tag :search %>
   
-    <%= select_tag :typearm,  options_for_select(Firearm.all.map {|f| f.typearm}),  prompt: "Type", class: "form_class" %>
-    <%= select_tag :status,  options_for_select(Firearm.all.map {|f| f.atstus}),  prompt: "Status", class: "form_class" %>
-    <%= select_tag :country,  options_for_select(Firearm.all.map {|f| f.country}),  prompt: "Country", class: "form_class" %>
-    <%= select_tag :year,  options_for_select(Firearm.all.map {|f| f.year}),  prompt: "Year of appearance", class: "form_class" %>
-    <%= select_tag :caliber,  options_for_select(Firearm.all.map {|f| f.caliber}),  prompt: "Caliber", class: "form_class" %>
-    <%= select_tag :action_type,  options_for_select(Firearm.all.map {|f| f.action_type}),  prompt: "Action type", class: "form_class" %>
-    <%= select_tag :trigger_type,  options_for_select(Firearm.all.map {|f| f.trigger_type}),  prompt: "Trigger type", class: "form_class" %>
-    <%= select_tag :barrel_l,  options_for_select(Firearm.all.map {|f| f.barrel_l}),  prompt: "Barrel length", class: "form_class" %>
-    <%= select_tag :over_l,  options_for_select(Firearm.all.map {|f| f.over_l}),  prompt: "Overall length", class: "form_class" %>
-    <%= select_tag :over_l_f,  options_for_select(Firearm.all.map {|f| f.over_l_f}),  prompt: "Overall length (folded stock)", class: "form_class" %>
-    <%= select_tag :em_w,  options_for_select(Firearm.all.map {|f| f.em_w}),  prompt: "Empty weight", class: "form_class" %>
-    <%= select_tag :l_w,  options_for_select(Firearm.all.map {|f| f.l_w}),  prompt: "Loaded weight", class: "form_class" %>
-    <%= select_tag :am_cap,  options_for_select(Firearm.all.map {|f| f.am_cap}),  prompt: "Magazine_capacity", class: "form_class" %>
-    <%= select_tag :fr_mat,  options_for_select(Firearm.all.map {|f| f.fr_mat}),  prompt: "Frame material", class: "form_class" %>
-    <%= select_tag :stock_type,  options_for_select(Firearm.all.map {|f| f.stock_type}),  prompt: "Stock type", class: "form_class" %>
+    <%= select_tag :typearm,  options_for_select(Firearm.all.map {|f| f.typearm}.uniq),  prompt: "Type", class: "form_class" %>
+    <%= select_tag :status,  options_for_select(Firearm.all.map {|f| f.atstus}.uniq),  prompt: "Status", class: "form_class" %>
+    <%= select_tag :country,  options_for_select(Firearm.all.map {|f| f.country}.uniq),  prompt: "Country", class: "form_class" %>
+    <%= select_tag :year,  options_for_select(Firearm.all.map {|f| f.year}.uniq),  prompt: "Year of appearance", class: "form_class" %>
+    <%= select_tag :caliber,  options_for_select(Firearm.all.map {|f| f.caliber}.uniq),  prompt: "Caliber", class: "form_class" %>
+    <%= select_tag :action_type,  options_for_select(Firearm.all.map {|f| f.action_type}.uniq),  prompt: "Action type", class: "form_class" %>
+    <%= select_tag :trigger_type,  options_for_select(Firearm.all.map {|f| f.trigger_type}.uniq),  prompt: "Trigger type", class: "form_class" %>
+    <%= select_tag :barrel_l,  options_for_select(Firearm.all.map {|f| f.barrel_l}.uniq),  prompt: "Barrel length", class: "form_class" %>
+    <%= select_tag :over_l,  options_for_select(Firearm.all.map {|f| f.over_l}.uniq),  prompt: "Overall length", class: "form_class" %>
+    <%= select_tag :over_l_f,  options_for_select(Firearm.all.map {|f| f.over_l_f}.uniq),  prompt: "Overall length (folded stock)", class: "form_class" %>
+    <%= select_tag :em_w,  options_for_select(Firearm.all.map {|f| f.em_w}.uniq),  prompt: "Empty weight", class: "form_class" %>
+    <%= select_tag :l_w,  options_for_select(Firearm.all.map {|f| f.l_w}.uniq),  prompt: "Loaded weight", class: "form_class" %>
+    <%= select_tag :am_cap,  options_for_select(Firearm.all.map {|f| f.am_cap}.uniq),  prompt: "Magazine_capacity", class: "form_class" %>
+    <%= select_tag :fr_mat,  options_for_select(Firearm.all.map {|f| f.fr_mat}.uniq),  prompt: "Frame material", class: "form_class" %>
+    <%= select_tag :stock_type,  options_for_select(Firearm.all.map {|f| f.stock_type}.uniq),  prompt: "Stock type", class: "form_class" %>
   
   
    
