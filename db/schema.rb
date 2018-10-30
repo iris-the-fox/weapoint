@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_26_071131) do
+ActiveRecord::Schema.define(version: 2018_10_30_090441) do
 
   create_table "choosen_arms", force: :cascade do |t|
     t.string "firearm_id"
@@ -37,6 +37,13 @@ ActiveRecord::Schema.define(version: 2018_10_26_071131) do
     t.string "fr_mat"
     t.string "stock_type"
     t.string "img_main"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
