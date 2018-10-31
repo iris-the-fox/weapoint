@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'contacts' => "contacts#contacts"
+  get 'contacts' => "contacts#index"
   resources :ammunitions
   resources :posts
   resources :sessions, only: [:new, :create, :destroy]
