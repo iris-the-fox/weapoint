@@ -33,8 +33,8 @@ class Firearm < ApplicationRecord
 
       Firearm.where(search_hash)
       
-    else
-      Firearm.all
+    #else
+    #  Firearm.all
     end
 
   end
