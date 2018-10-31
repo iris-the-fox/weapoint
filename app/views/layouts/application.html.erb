@@ -16,7 +16,7 @@
       <li><%= link_to("NEWS", posts_path) %></li>
       <li><%= link_to("FIREARMS", root_path) %></li>
       <li><%= link_to("AMMUNITION",  ammunitions_path) %></li>
-      <li>LEARNING<%# link_to("Releases", releases_path) %></li>
+      <li><%= link_to("LEARNING", learnings_path) %></li>
       <li><%= link_to("CONTACTS", contacts_path) %></li>
       <% if logged_in? %>
       <li><%= link_to "Logout",  logout_path, method: :delete %></li>

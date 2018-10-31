@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :learnings
   get 'contacts' => "contacts#index"
   resources :ammunitions
   resources :posts
