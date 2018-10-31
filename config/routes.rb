@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :firearms
   get '/news' => "posts#index"
+
  
 
   resources :choosen_arms, only: [:new, :create, :show]
