@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  get 'contacts' => "contacts#contacts"
   resources :ammunitions
   resources :posts
   resources :sessions, only: [:new, :create, :destroy]
   root to: 'firearms#index'
   resources :firearms
   get "firearms" => 'firearms#index'
+ 
 
   resources :choosen_arms, only: [:new, :create, :show]
 
