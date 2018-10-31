@@ -70,11 +70,12 @@
         <td><%= firearm.fr_mat %></td>
         <td><%= firearm.stock_type %></td>
         <td><%= firearm.img_main %></td>
-         <% if logged_in? %>
+       
         <td><%= link_to 'Show', firearm %></td>
+        <% if logged_in? %>
         <td><%= link_to 'Edit', edit_firearm_path(firearm) %></td>
         <td><%= link_to 'Destroy', firearm, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <% end %>
+        <% end %>
         
       </tr>
     <% end %>

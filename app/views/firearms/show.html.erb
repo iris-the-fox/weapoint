@@ -1,6 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 
+<div class="row">
+      <div class="column1_inner">
+       
+       <%# provide(:title, 'Search Firearms') %>
+        <%= render 'search' %>
+      
+      </div>
+
+<div class="column2_inner">
 <h1>
     <%= @firearm.name %>
 </h1>
@@ -77,6 +86,11 @@
  
 </table>
 
-
+<% if logged_in? %>
 <%= link_to 'Edit', edit_firearm_path(@firearm) %> |
+<% end %>
+
+
 <%= link_to 'Back', firearms_path %>
+</div>
+</div>
