@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
-  resources :learnings
+  root to: 'main#index'
+
+  get 'main/index'
   get 'contacts' => "contacts#index"
+  resources :learnings
   resources :ammunitions
   resources :posts
   resources :sessions, only: [:new, :create, :destroy]
-  root to: 'firearms#index'
   resources :firearms
-  get "firearms" => 'firearms#index'
+  get '/news' => "posts#index"
  
 
   resources :choosen_arms, only: [:new, :create, :show]
