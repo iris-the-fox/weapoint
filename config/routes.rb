@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'admin' =>'admin#index'
   root to: 'main#index'
 
   get 'main/index'
