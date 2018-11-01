@@ -85,8 +85,6 @@ li a:hover:not(.active) {
     padding-top: 5px;
     float: left;
     width: 25%;
-    background-image: url("logo.jpg");
-    background-repeat: no-repeat;
     
     
 }

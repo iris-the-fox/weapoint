@@ -12,7 +12,7 @@
       
       </div>
 
-      <div class="column2_inner">
+      <div class="column2_inner ">
          <% if !@firearms.nil? %>
            <%= render 'search_results' %>
         <% else %>
@@ -22,3 +22,4 @@
 </div>
 <br>
 <br>
+<%= link_to 'New Firearm', new_firearm_path %>
