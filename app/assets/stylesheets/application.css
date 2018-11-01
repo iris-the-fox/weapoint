@@ -82,16 +82,22 @@ li a:hover:not(.active) {
     width: 75%;
 }
 .column2 {
+    padding-top: 5px;
     float: left;
     width: 25%;
-   
+    background-image: url("logo.jpg");
+    background-repeat: no-repeat;
+    
+    
 }
 
 .column1_inner {
+    padding: 5px;
     float: left;
     width: 30%;
 }
 .column2_inner {
+    padding: 5px;
     float: left;
     width: 70%;
     background-color: #E6E6E6;
@@ -118,6 +124,16 @@ li a:hover:not(.active) {
     float: left;
 
 }
+
+@media screen and (min-width:700px) {
+         
+     .row-eq-height {
+       display: -webkit-box;
+       display: -webkit-flex;
+       display: -ms-flexbox;
+       display:         flex;
+     }
+ }
 
 /* Clear floats after the columns */
 .row:after {
