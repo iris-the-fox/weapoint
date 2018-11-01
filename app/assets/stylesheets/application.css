@@ -94,14 +94,14 @@ li a:hover:not(.active) {
 .column2_inner {
     float: left;
     width: 70%;
+    background-color: #E6E6E6;
 }
 
 .search_result {
-    width: 80%;
     padding: 20px;
-    border: 1px solid gray;
+    border-bottom: solid 0.5px #D1D1D1;
     overflow: auto;
-    background-color: #E6E6E6;
+    padding: 5px;
 }
 
 .search_column {
@@ -129,12 +129,18 @@ li a:hover:not(.active) {
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
 @media screen and (max-width:700px) {
+    .column1 {
+        width: 100%;
+    }
+}
+@media screen and (max-width:700px) {
     .column1_inner {
         width: 100%;
     }
 }
 @media screen and (max-width:700px) {
     .column2_inner {
+        margin-top: 20px;
         width: 100%;
     }
 }
