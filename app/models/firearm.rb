@@ -1,12 +1,12 @@
 class Firearm < ApplicationRecord
   has_many :choosen_arms
  
-  def initialize(params)
+  #def initialize(params)
   	#@typearm = firearms.typearm
   	#@status = firearms.atstus
   	#@name = firearms.name
 
-  end
+ # end
 
 
   def self.search(params)
