@@ -45,6 +45,8 @@ table, th, td {
   background-color: #E6E6E6;
 }
 
+
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -70,11 +72,11 @@ li a:visited {
   color: white;
 }
 li a:hover:not(.active) {
-    background-color: #BE2D2D;
+    background-color: #BD6060;
 }
 
-.active {
-    background-color: #4CAF50;
+li a.active {
+    background-color: #BE2D2D;
 }
 /* Create three equal columns that floats next to each other */
 .column1 {
