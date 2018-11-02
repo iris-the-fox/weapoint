@@ -11,9 +11,11 @@
 
   <body>
 
+    <div class="sticky-top">
 
 
-    <ul >
+
+    <ul>
       <li ><%= link_to("WEAPOINT", root_path, :class => current_class?(root_path)) %></li>
       <li><%= link_to("NEWS", posts_path, :class => current_class?(posts_path)) %></li>
       <li><%= link_to("FIREARMS", firearms_path, :class => current_class?(firearms_path)) %></li>
@@ -26,6 +28,7 @@
       <% end %>
 
     </ul>
+  </div>
 
     <div class="row equal">
       <div class="column1">
