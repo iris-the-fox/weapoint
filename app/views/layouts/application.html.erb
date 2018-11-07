@@ -11,28 +11,33 @@
 
   <body>
 
-    <ul>
-      <li><%= link_to("WEAPOINT", root_path) %></li>
-      <li>NEWS<%# link_to("Releases", releases_path) %></li>
-      <li><%= link_to("FIREARMS", root_path) %></li>
-      <li>AMMUNITION<%# link_to "Logout",  logout_path, method: :delete %></li>
-      <li>LEARNING<%# link_to("Releases", releases_path) %></li>
-      <li>CONTACT<%# link_to("Releases", releases_path) %></li>
-    </ul>
+    <div class="sticky-top">
 
-    <div class="row">
+
+
+    <ul>
+      <li ><%= link_to("WEAPOINT", root_path, :class => current_class?(root_path)) %></li>
+      <li><%= link_to("NEWS", posts_path, :class => current_class?(posts_path)) %></li>
+      <li><%= link_to("FIREARMS", firearms_path, :class => current_class?(firearms_path)) %></li>
+      <li><%= link_to("AMMUNITION",  ammunitions_path, :class => current_class?(ammunitions_path)) %></li>
+      <li><%= link_to("LEARNING", learnings_path, :class => current_class?(learnings_path)) %></li>
+      <li><%= link_to("CONTACTS", contacts_path, :class => current_class?(contacts_path)) %></li>
+      <% if logged_in? %>
+      <li><%= link_to("ADMIN", admin_path, :class => current_class?(admin_path)) %></li>
+      <li><%= link_to "Logout",  logout_path, method: :delete %></li>
+      <% end %>
+
+    </ul>
+  </div>
+
+    <div class="row equal">
       <div class="column1">
-        <h2>Column</h2>
-        <%# provide(:title, 'Search Firearms') %>
-        <%= render 'search' %>
-      </div>
-      <div class="column2">
-        
+              
           <%= yield %>
 
       </div>
-      <div class="column3">
-          <h2>Column</h2>   
+      <div class="column2">
+          
           
      </div>
     </div>

@@ -9,7 +9,6 @@ class FirearmsController < ApplicationController
   end
 
 
-
   # GET /firearms/1
   # GET /firearms/1.json
   def show

@@ -1,2 +1,0 @@
-class ChoosenArm < ApplicationRecord
-end

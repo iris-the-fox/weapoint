@@ -1,11 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 
+<div class="row row-eq-height">
+      <div class="column1_inner">
+       <div class="search_column" >
+        <h4> SPECS </h4>
+         <%# provide(:title, 'Search Firearms') %>
+          <%= render 'search' %>
+        </div>
+      </div>
+
+<div class="column2_inner">
 <h1>
     <%= @firearm.name %>
 </h1>
 
- <%= image_tag( @firearm.img_main, alt: "Здесь могла бы быть ваша реклама", width: '100%') %>
+
+ <%= image_tag( @firearm.img_main, width: '80%') %>
 
 
 
@@ -77,6 +88,11 @@
  
 </table>
 
-
+<% if logged_in? %>
 <%= link_to 'Edit', edit_firearm_path(@firearm) %> |
+<% end %>
+
+
 <%= link_to 'Back', firearms_path %>
+</div>
+</div>

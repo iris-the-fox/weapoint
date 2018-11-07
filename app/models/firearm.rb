@@ -1,7 +1,10 @@
 class Firearm < ApplicationRecord
-  has_many :choosen_arms
 
-
+ 
+  #def initialize(params)
+  	#@typearm = firearms.typearm
+  	#@status = firearms.atstus
+  	#@name = firearms.name
 
 
   def self.search(params)
@@ -28,8 +31,8 @@ class Firearm < ApplicationRecord
 
       Firearm.where(search_hash)
       
-    else
-      Firearm.all
+    #else
+    #  Firearm.all
     end
 
   end

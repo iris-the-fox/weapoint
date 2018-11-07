@@ -1,3 +1,26 @@
 // Place all the styles related to the firearms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.form_class {
+    width: 100%;
+    background-color: #E6E6E6;
+    border: 2px solid;
+    border-color: #BE2D2D;
+}
+
+.button {
+    color: #BE2D2D;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
+}
+
+@media screen and (min-width:700px) {
+         
+     .row-eq-height {
+       display: -webkit-box;
+       display: -webkit-flex;
+       display: -ms-flexbox;
+       display:         flex;
+     }
+ }
