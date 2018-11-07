@@ -67,3 +67,5 @@ group :production do
 end
 
 gem 'trix-rails', require: 'trix'
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'

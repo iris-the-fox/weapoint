@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :ensure_login
   skip_before_action :ensure_login, only: [:show,:index]
   
-  protect_from_forgery with: :exception
+  protect_from_forgery with: :exception, prepend: :true
   
 
   helper_method :logged_in?, :current_user
