@@ -5,12 +5,10 @@
   <%= @post.title %>
 </p>
 
-
+<p>
   <strong>Body:</strong>
-  <%= image_tag(@post.image.url(:large)) if @post.image? %>
-  <%= @post.body.html_safe %>
-
-
+  <%= @post.body %>
+</p>
 
 <p>
   <strong>Date:</strong>
