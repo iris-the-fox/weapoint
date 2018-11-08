@@ -1,13 +1,19 @@
 <p id="notice"><%= notice %></p>
+<div class="row row-eq-height">
+      <div class="column1_inner">
+       <p> Что должно быть в новостях в боковой колонке? </p>
+      </div>
 
+<div class="column2_inner">
 <h1>News</h1>
 
 
  
     <% @posts.each do |post| %>
       <h2> <%= link_to post.title , post %> </h2>
-      <p><%= post.body.html_safe %></p>
       <p><%= post.date %></p>
+      <p><%= post.body.html_safe %></p>
+      
          
       <% if logged_in? %>
       <p><%= link_to 'Edit', edit_post_path(post) %> |
@@ -16,11 +22,13 @@
       
      
     <% end %>
+    <br>
+    <br>
+    <% if logged_in? %>
+      <%= link_to 'New Post', new_post_path %>
+    <% end %>
+</div>
+</div>
 
 
-<br>
-<br>
 
-<% if logged_in? %>
-<%= link_to 'New Post', new_post_path %>
-<% end %>

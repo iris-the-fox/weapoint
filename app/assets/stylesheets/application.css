@@ -19,6 +19,9 @@
 @import "summernote-custom-theme.min";
 @import "summernote-lite";
 
+h1 {
+    text-align: center;
+}
 h4 {
     font-size: 15px;
     color: white;
@@ -161,6 +164,9 @@ li a.active {
     clear: both;
 }
 
+.admin-view {
+    min-height: 400px;
+}
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
 @media screen and (max-width:700px) {
