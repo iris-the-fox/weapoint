@@ -14,10 +14,7 @@
  *= require_self
  */
 
- @import "bootstrap";
 
-
-@import "summernote-lite";
 
 h1 {
     text-align: center;
