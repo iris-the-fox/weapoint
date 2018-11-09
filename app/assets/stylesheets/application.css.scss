@@ -1,0 +1,215 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+
+ */
+@import "bootstrap";
+@import "summernote-lite";
+
+h1 {
+    text-align: center;
+}
+h4 {
+    font-size: 15px;
+    color: white;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0px;
+    font-weight: normal;
+}
+.news {
+    padding: 5px;
+    border-collapse: collapse;
+    border-bottom: 1px solid black;
+}
+
+.for_admin {
+    margin: 20px;
+}
+
+.center {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+table {
+    font-family: Arial;
+    border-collapse: collapse;
+    width: 100%;
+}
+table, th, td {
+    border: 1px solid black;
+}
+
+.even {
+  background-color: #F7F7F7;
+}
+
+.odd {
+  background-color: #E6E6E6;
+}
+
+
+ .sticky-top {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+  }
+
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+    width: 100%;
+    }
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 16px;
+}
+li a:visited {
+  color: white;
+}
+li a:hover:not(.active) {
+    background-color: #BD6060;
+}
+
+li a.active {
+    background-color: #BE2D2D;
+}
+/* Create three equal columns that floats next to each other */
+.column1 {
+    float: left;
+    width: 75%;
+}
+.column2 {
+    padding-top: 5px;
+    float: left;
+    width: 25%;
+    
+    
+}
+
+.column1_inner {
+    padding: 5px;
+    float: left;
+    width: 30%;
+}
+.column2_inner {
+    padding: 5px;
+    float: left;
+    width: 70%;
+    background-color: #E6E6E6;
+}
+
+.search_result {
+    padding: 20px;
+    border-bottom: solid 0.5px #D1D1D1;
+    overflow: auto;
+    padding: 5px;
+}
+
+.search_column {
+    /* width: 230px;
+    position: fixed;
+    z-index: 3;
+    top: 60px; */
+
+    width: 80%;
+    padding: 0px;
+    overflow: auto;
+    border: 2px solid #BE2D2D;
+    background-color: #BE2D2D;
+    margin-left: 0px;
+}
+
+
+.search_result_img {
+    width: 30%;
+    float: left;
+
+}
+
+@media screen and (min-width:700px) {
+         
+     .row-eq-height {
+       display: -webkit-box;
+       display: -webkit-flex;
+       display: -ms-flexbox;
+       display:         flex;
+     }
+ }
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.admin-view {
+    min-height: 400px;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
+@media screen and (max-width:700px) {
+    .column1 {
+        width: 100%;
+    }
+}
+@media screen and (max-width:700px) {
+    .column1_inner {
+        width: 100%;
+    }
+}
+@media screen and (max-width:700px) {
+    .column2_inner {
+        margin-top: 20px;
+        width: 100%;
+    }
+}
+@media screen and (max-width:700px) {
+    .column2 { 
+    	display: none; 
+    }
+}
+
+@media screen and (min-width:700px) {
+    body {
+  background-color: #f7f7f7;
+  color: #333;
+  font-family:  arial;
+  font-size: 13px;
+  line-height: 18px;
+  background-image: url("logo.jpg");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-attachment: fixed;
+    margin: 0px;
+}
+}
