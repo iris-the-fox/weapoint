@@ -31,6 +31,11 @@ h4 {
     margin: 0px;
     font-weight: normal;
 }
+.news {
+    border-collapse: collapse;
+    border-bottom: 1px solid black;
+}
+
 .center {
     display:block;
     margin-left: auto;
