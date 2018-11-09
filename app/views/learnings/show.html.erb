@@ -1,27 +1,22 @@
 <p id="notice"><%= notice %></p>
+<div class="row row-eq-height">
+  <div class="column1_inner">
+    <p> Что должно быть здесь в боковой колонке? </p>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @learning.name %>
-</p>
+  <div class="column2_inner">
+    <h1>  <%= @learning.name %> </h1>
+    <p>   <%= @learning.note.html_safe %> </p>
+    <p> <%= @learning.tag %> </p>
+    <% if logged_in? %>
+      <p>  <strong>Range:</strong>
+           <%= @learning.range %> </p>
+      <%= link_to 'Edit', edit_learning_path(@learning) %> |
+    <% end %>
+    <%= link_to 'Back', learnings_path %>
+  </div>
+</div>
 
-<p>
-  <strong>Note:</strong>
-  <%= @learning.note %>
-</p>
 
-<p>
-  <strong>Tag:</strong>
-  <%= @learning.tag %>
-</p>
 
-<p>
-  <strong>Range:</strong>
-  <%= @learning.range %>
-</p>
 
-<% if logged_in? %>
-<%= link_to 'Edit', edit_learning_path(@learning) %> |
-<% end %>
-
-<%= link_to 'Back', learnings_path %>

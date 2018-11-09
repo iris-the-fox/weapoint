@@ -1,39 +1,34 @@
 <p id="notice"><%= notice %></p>
+<div class="row row-eq-height">
+      <div class="column1_inner">
+       <p> Что должно быть здесь в боковой колонке? </p>
+      </div>
 
+<div class="column2_inner">
 <h1>Learnings</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Note</th>
-      <th>Tag</th>
-      <th>Range</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @learnings.each do |learning| %>
-      <tr>
-        <td><%= learning.name %></td>
-        <td><%= learning.note %></td>
-        <td><%= learning.tag %></td>
-        <td><%= learning.range %></td>
-        <td><%= link_to 'Show', learning %></td>
-        <% if logged_in? %>
-        <td><%= link_to 'Edit', edit_learning_path(learning) %></td>
-        <td><%= link_to 'Destroy', learning, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
+   <% @learnings.each do |learning| %>
+   <div class='news' >
+      <h2> <%= link_to learning.name , learning %> </h2>
+      
+        <%= learning.note.html_safe %>
+        <br>
+        <%= learning.tag %>
+        <br>
+        <%= learning.range %>
         
-      </tr>
+        <% if logged_in? %>
+        <p><%= link_to 'Edit', edit_learning_path(learning) %> |
+        <%= link_to 'Destroy', learning, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        <% end %>    
+    </div>     
+     
     <% end %>
-  </tbody>
-</table>
 
-<br>
+    <br>
+    <br>
+  <% if logged_in? %>
+  <%= link_to 'New Learning', new_learning_path %>
+  <% end %>
+  </div>
+  </div>
 
-
-<% if logged_in? %>
-<%= link_to 'New Learning', new_learning_path %>
-<% end %>
