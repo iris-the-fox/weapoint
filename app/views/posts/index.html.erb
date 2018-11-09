@@ -12,7 +12,7 @@
     <% @posts.each do |post| %>
      <div class='news' >
       <h2> <%= link_to post.title , post %> </h2>
-      <p><%= post.datenews.to_formatted_s(:default) if post.datenews? %></p>
+      <h3><%= post.datenews.to_formatted_s(:default) if post.datenews? %></h3>
       <p><%= post.body.html_safe %></p>
       
          
