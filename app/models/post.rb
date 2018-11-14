@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
-	has_and_belongs_to_many :tags
+	has_many :taggings
+  has_many :tags, through: :taggings
 	default_scope {order range: :desc}
 
 	def all_tags

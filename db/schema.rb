@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_14_101041) do
+ActiveRecord::Schema.define(version: 2018_11_14_121103) do
 
   create_table "ammunitions", force: :cascade do |t|
     t.string "name"
@@ -209,11 +209,13 @@ ActiveRecord::Schema.define(version: 2018_11_14_101041) do
     t.datetime "datenews"
   end
 
-  create_table "posts_tags", id: false, force: :cascade do |t|
+  create_table "taggings", force: :cascade do |t|
     t.integer "post_id"
     t.integer "tag_id"
-    t.index ["post_id"], name: "index_posts_tags_on_post_id"
-    t.index ["tag_id"], name: "index_posts_tags_on_tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_taggings_on_post_id"
+    t.index ["tag_id"], name: "index_taggings_on_tag_id"
   end
 
   create_table "tags", force: :cascade do |t|
