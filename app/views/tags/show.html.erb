@@ -5,12 +5,13 @@
   </div>
 
   <div class="column2_inner">
-    <h1><%= @tag.name %></h1>
-    
-    <% if @tag.posts.empty?  %>
+   
+    <% if @tag.nil?  %>
+      <h2>Такого тега пока нет. Мы тоже огорчены.</h2>
+    <% elsif @tag.posts.empty?  %>
       <h2>Статей нет</h2>
     <% else %>
-      
+      <h1><%= @tag.name %></h1>
       <% @tag.posts.each do |post| %>
         <div class='news' >
             <h2> <%= link_to post.title , post %> </h2>
