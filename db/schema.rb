@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_09_080743) do
+ActiveRecord::Schema.define(version: 2018_11_14_101041) do
 
   create_table "ammunitions", force: :cascade do |t|
     t.string "name"
@@ -182,6 +182,17 @@ ActiveRecord::Schema.define(version: 2018_11_09_080743) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "news", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.text "summury"
+    t.string "image"
+    t.integer "range"
+    t.datetime "datenews"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "pictures", force: :cascade do |t|
     t.string "image"
     t.datetime "created_at", null: false
@@ -196,6 +207,19 @@ ActiveRecord::Schema.define(version: 2018_11_09_080743) do
     t.datetime "updated_at", null: false
     t.string "image"
     t.datetime "datenews"
+  end
+
+  create_table "posts_tags", id: false, force: :cascade do |t|
+    t.integer "post_id"
+    t.integer "tag_id"
+    t.index ["post_id"], name: "index_posts_tags_on_post_id"
+    t.index ["tag_id"], name: "index_posts_tags_on_tag_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
