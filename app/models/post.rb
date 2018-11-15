@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-	has_many :taggings
+	has_many :taggings, :dependent => :destroy
   has_many :tags, through: :taggings
 	default_scope {order range: :desc}
 
