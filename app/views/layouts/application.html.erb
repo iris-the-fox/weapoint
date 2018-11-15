@@ -16,15 +16,15 @@
 
 
     <ul>
-      <li ><%= link_to("WEAPOINT", root_path, :class => current_class?(root_path)) %></li>
-      <li><%= link_to("NEWS", posts_path, :class => current_class?(posts_path)) %></li>
-      <li><%= link_to("FIREARMS", firearms_path, :class => current_class?(firearms_path)) %></li>
-      <li><%= link_to("AMMUNITION",  ammunitions_path, :class => current_class?(ammunitions_path)) %></li>
-      <li><%= link_to("LEARNING", learnings_path, :class => current_class?(learnings_path)) %></li>
-      <li><%= link_to("CONTACTS", contacts_path, :class => current_class?(contacts_path)) %></li>
+      <li ><%= active_link_to("WEAPOINT", root_path, active: :exclusive) %></li>
+      <li><%= active_link_to("NEWS", posts_path, active: [['posts', 'tags'], []]) %></li>
+      <li><%= active_link_to("FIREARMS", firearms_path) %></li>
+      <li><%= active_link_to("AMMUNITION",  ammunitions_path) %></li>
+      <li><%= active_link_to("LEARNING", learnings_path) %></li>
+      <li><%= active_link_to("CONTACTS", contacts_path) %></li>
       <% if logged_in? %>
-      <li><%= link_to("ADMIN", admin_path, :class => current_class?(admin_path)) %></li>
-      <li><%= link_to "Logout",  logout_path, method: :delete %></li>
+      <li><%= active_link_to("ADMIN", admin_path) %></li>
+      <li><%= active_link_to "Logout",  logout_path, method: :delete %></li>
       <% end %>
 
     </ul>
