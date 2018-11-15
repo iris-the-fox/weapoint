@@ -28,19 +28,21 @@
       <% end %>
 
     </ul>
-  </div>
+  </div> <%#stiky-top%>
+  <div class="wrapper">
 
-    <div class="row equal">
+    <div class="row equal content">
       <div class="column1">
               
           <%= yield %>
 
-      </div>
+      </div> <%#column1%>
       <div class="column2">
           
-          
-     </div>
-    </div>
+      </div> <%#column2%>
+    </div> <%#row%>
+    <div class="footer">This footer is fixed</div>
+  </div>
 
   </body>
 </html>
