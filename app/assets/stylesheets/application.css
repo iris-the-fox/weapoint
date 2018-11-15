@@ -29,10 +29,19 @@
 }
 .tag5 {
   font-size: 1.8em}
-
+.tag_cloud {
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 5px;
+    background-color: #E6E6E6;
+}
 
 h1 {
     text-align: center;
+}
+h2 {
+    text-align: center;
+    margin-top: 0px;
 }
 h4 {
     font-size: 15px;
@@ -130,7 +139,7 @@ li a.active {
 }
 
 .column1_inner {
-    padding: 5px;
+    
     float: left;
     width: 30%;
 }
@@ -159,7 +168,7 @@ li a.active {
     overflow: auto;
     border: 2px solid #BE2D2D;
     background-color: #BE2D2D;
-    margin-left: 0px;
+    margin-left: 10px;
 }
 
 
