@@ -16,13 +16,16 @@
         <div class='news' >
        
           <h2> <%= link_to post.title , post %> </h2>
-          <h3><%= post.datenews.to_formatted_s(:default) if post.datenews? %></h3>
-          <p><%= post.body.html_safe %>
-            <%# post.summary %>
+          <p class='date'>Posted on <%= post.datenews.to_formatted_s(:default) if post.datenews? %>, <%# link_to 'link', post_path(post, anchor: 'disqus_thread') %>
+          <a href="<%=post_path(post, anchor: 'disqus_thread')%>" data-disqus-identifier="<%=post.id%>">First article</a></p>
+          <p><%# post.body.html_safe %>
+            <%= post.summary %>
           </p>
           <p><%= raw post.tags.map(&:name).map{|t|  link_to t, tag_path(t) }.join(' ') %></p>
-          
+          <p> <p>
+            
              
+            
           <% if logged_in? %>
           <p><%= link_to 'Edit', edit_post_path(post) %> |
           <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p  >
@@ -34,6 +37,6 @@
    
 </div>
 </div>
-
+<script id="dsq-count-scr" src="//weapoint.disqus.com/count.js" async></script>
 
 

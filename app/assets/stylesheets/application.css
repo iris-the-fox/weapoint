@@ -55,6 +55,10 @@ img {
   max-width: 100%;
 }
 
+.date {
+  font-style: italic;
+
+}
 .summary {
   min-width: 450px;
   min-height: 100px;
@@ -91,6 +95,7 @@ h2 {
     margin-top: 0px;
     padding: 10px;
 }
+
 h4 {
     font-size: 15px;
     color: white;
