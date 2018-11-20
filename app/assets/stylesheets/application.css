@@ -51,6 +51,9 @@ body {
     text-align: center;
 }
 */
+img {
+  max-width: 100%;
+}
 
 .summary {
   min-width: 450px;

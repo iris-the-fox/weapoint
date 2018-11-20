@@ -22,6 +22,7 @@
   <p><%= raw @post.tags.map(&:name).map{|t|  link_to t, tag_path(t) }.join(' ') %></p>
 </p>
 
+<%= render 'disqus' %>
 
 
 <% if logged_in? %>
