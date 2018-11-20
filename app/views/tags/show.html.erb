@@ -11,7 +11,7 @@
     <% elsif @tag.posts.empty?  %>
       <h2>Статей нет</h2>
     <% else %>
-      <h1><%= @tag.name %></h1>
+      <h1>Tags: <%= @tag.name %></h1>
       <% @tag.posts.each do |post| %>
         <div class='news' >
             <h2> <%= link_to post.title , post %> </h2>

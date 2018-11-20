@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_14_122218) do
+ActiveRecord::Schema.define(version: 2018_11_20_094035) do
 
   create_table "ammunitions", force: :cascade do |t|
     t.string "name"
@@ -57,6 +57,18 @@ ActiveRecord::Schema.define(version: 2018_11_14_122218) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string "slug", null: false
+    t.integer "sluggable_id", null: false
+    t.string "sluggable_type", limit: 50
+    t.string "scope"
+    t.datetime "created_at"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  end
+
   create_table "learnings", force: :cascade do |t|
     t.string "name"
     t.text "note"
@@ -86,11 +98,13 @@ ActiveRecord::Schema.define(version: 2018_11_14_122218) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "body"
-    t.integer "range"
+    t.integer "range", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
     t.datetime "datenews"
+    t.string "ancestry"
+    t.string "summary"
   end
 
   create_table "taggings", force: :cascade do |t|

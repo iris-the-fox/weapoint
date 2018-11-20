@@ -5,33 +5,35 @@
       </div>
 
 <div class="column2_inner">
-<h1>News</h1>
-
-
+  <h1>News</h1>
+    <% if logged_in? %>
+      <%= link_to 'Add new post', new_post_path %>
+    <% end %>
+    <br>
+    <br>
  
     <% @posts.each do |post| %>
-     <div class='news' >
-      <h2> <%= link_to post.title , post %> </h2>
-      <h3><%= post.datenews.to_formatted_s(:default) if post.datenews? %></h3>
-      <p><%= post.body.html_safe %></p>
-      <p><%= raw post.tags.map(&:name).map{|t|  link_to t, tag_path(t) }.join(' ') %></p>
-      
-         
-      <% if logged_in? %>
-      <p><%= link_to 'Edit', edit_post_path(post) %> |
-      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+           
+      <% if post.datenews.to_date < Date.current %>
+        <div class='news' >
+       
+          <h2> <%= link_to post.title , post %> </h2>
+          <h3><%= post.datenews.to_formatted_s(:default) if post.datenews? %></h3>
+          <p><%= post.body.html_safe %>
+            <%# post.summary %>
+          </p>
+          <p><%= raw post.tags.map(&:name).map{|t|  link_to t, tag_path(t) }.join(' ') %></p>
+          
+             
+          <% if logged_in? %>
+          <p><%= link_to 'Edit', edit_post_path(post) %> |
+          <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p  >
+          <% end %>
+        </div>
       <% end %>
+    <% end %>
     
-    </div>
-
-      
-     
-    <% end %>
-    <br>
-    <br>
-    <% if logged_in? %>
-      <%= link_to 'New Post', new_post_path %>
-    <% end %>
+   
 </div>
 </div>
 

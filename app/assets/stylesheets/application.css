@@ -52,6 +52,10 @@ body {
 }
 */
 
+.summary {
+  min-width: 450px;
+  min-height: 100px;
+}
 .tag1 {
   font-size: 1.0em
 }
