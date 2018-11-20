@@ -5,16 +5,14 @@
       </div>
 
 <div class="column2_inner">
-  <h1>News</h1>
-    <% if logged_in? %>
+     <% if logged_in? %>
       <%= link_to 'Add new post', new_post_path %>
     <% end %>
-    <br>
-    <br>
+   
  
     <% @posts.each do |post| %>
            
-      <% if post.datenews.to_date < Date.current %>
+      <% if post.datenews < Time.current %>
         <div class='news' >
        
           <h2> <%= link_to post.title , post %> </h2>
