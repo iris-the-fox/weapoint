@@ -69,6 +69,6 @@ class LearningsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def learning_params
-      params.require(:learning).permit(:name, :note, :tag, :range)
+      params.require(:learning).permit(:title, :note, :summary, :range)
     end
 end
