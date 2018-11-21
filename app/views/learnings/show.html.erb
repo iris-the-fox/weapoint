@@ -12,7 +12,7 @@
   
   <%= @learning.note.html_safe %>
 </p>
-
+   <p>Tags: <%= raw @learning.learntags.map(&:name).map{|t|  link_to t, learntag_path(t) }.join(' ') %></p>
 
 
 

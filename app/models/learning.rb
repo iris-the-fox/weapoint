@@ -1,5 +1,5 @@
 class Learning < ApplicationRecord
-	has_many :learntaggings
+	has_many :learntaggings, :dependent => :destroy
 	has_many :learntags, through: :learntaggings
 	default_scope {order range: :desc, created_at: :desc}
 
