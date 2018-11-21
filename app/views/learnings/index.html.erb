@@ -16,6 +16,7 @@
         <div class='news' >
        
           <h2> <%= link_to learning.title , learning %> </h2>
+          <p class='date'> Posted on <%= learning.created_at.to_formatted_s(:default) %> </p>
                  
           
           <p><%# learning.body.html_safe %>
