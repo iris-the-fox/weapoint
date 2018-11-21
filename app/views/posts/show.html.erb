@@ -26,10 +26,8 @@
 
 
 <% if logged_in? %>
-<p>
-  <strong>Range:</strong>
-  <%= @post.range %>
-</p>
+<p> Range: <%= @post.range %>(видно только админу) </p>
+
 <%= link_to 'Edit', edit_post_path(@post) %> |
 
 <% end %>

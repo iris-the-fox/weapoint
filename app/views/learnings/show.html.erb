@@ -1,13 +1,13 @@
 <%= notice %>
 <div class="row row-eq-height">
       <div class="column1_inner">
-       <%# render 'cloud', learning: @learning %>
+       <%= render 'cloud', learning: @learning %>
        
       </div>
 
 <div class="column2_inner">
 <h1>  <%= @learning.title %> </h1>
-
+<p class='date'> Posted on <%= @learning.created_at.to_formatted_s(:default) %> </p>
 <p>
   
   <%= @learning.note.html_safe %>
@@ -18,10 +18,7 @@
 
 
 <% if logged_in? %>
-<p>
-  <strong>Range:</strong>
-  <%= @learning.range %>
-</p>
+<p> Range: <%= @learning.range %> (видно только админу)</p>
 <%= link_to 'Edit', edit_learning_path(@learning) %> |
 
 <% end %>

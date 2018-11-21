@@ -26,11 +26,12 @@
             <%= post.summary %>
           </p>
           <p><%= raw post.tags.map(&:name).map{|t|  link_to t, tag_path(t) }.join(' ') %></p>
-          <p> <p>
+         
             
              
             
           <% if logged_in? %>
+          <p> Range: <%= post.range %> (видно только админу)</p>
           <p><%= link_to 'Edit', edit_post_path(post) %> |
           <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p  >
           <% end %>

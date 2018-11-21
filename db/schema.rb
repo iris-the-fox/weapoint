@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_21_103354) do
+ActiveRecord::Schema.define(version: 2018_11_21_115053) do
 
   create_table "ammunitions", force: :cascade do |t|
     t.string "name"
@@ -76,6 +76,21 @@ ActiveRecord::Schema.define(version: 2018_11_21_103354) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "summary"
+  end
+
+  create_table "learntaggings", force: :cascade do |t|
+    t.integer "learning_id"
+    t.integer "learntag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["learning_id"], name: "index_learntaggings_on_learning_id"
+    t.index ["learntag_id"], name: "index_learntaggings_on_learntag_id"
+  end
+
+  create_table "learntags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "news", force: :cascade do |t|

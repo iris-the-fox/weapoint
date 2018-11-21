@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :firearms
   get '/news' => "posts#index"
   resources :tags, only: [:show]
+  resources :learntags, only: [:show]
 
  
 

@@ -1,7 +1,7 @@
 <%= notice %>
 <div class="row row-eq-height">
       <div class="column1_inner">
-      <%# render 'cloud', learning: @learning %>
+      <%= render 'cloud', learning: @learning %>
       </div>
 
 <div class="column2_inner">
@@ -23,11 +23,12 @@
             <%= learning.summary %>
           </p>
           
-          <p> <p>
+         <p><%= raw learning.learntags.map(&:name).map{|t|  link_to t, learntag_path(t) }.join(' ') %></p>
             
              
             
           <% if logged_in? %>
+          <p> Range: <%= learning.range %> (видно только админу) </p>
           <p><%= link_to 'Edit', edit_learning_path(learning) %> |
           <%= link_to 'Destroy', learning, method: :delete, data: { confirm: 'Are you sure?' } %></p  >
           <% end %>

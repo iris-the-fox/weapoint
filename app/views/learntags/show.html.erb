@@ -1,0 +1,35 @@
+
+<div class="row row-eq-height">
+  <div class="column1_inner">
+   <%= render '/learnings/cloud', learning: @learning %>
+  </div>
+
+  <div class="column2_inner">
+   
+    <% if @learntag.nil?  %>
+      <h2>Такого тега пока нет. Мы тоже огорчены.</h2>
+    <% elsif @learntag.learnings.empty?  %>
+      <h2>Статей нет</h2>
+    <% else %>
+      <h1>Tags: <%= @learntag.name %></h1>
+      <% @learntag.learnings.each do |learning| %>
+        <div class='news' >
+            <h2> <%= link_to learning.title , learning %> </h2>
+            <p class='date'> Posted on <%= learning.created_at.to_formatted_s(:default) %> </p>
+            <p><%= learning.note.html_safe %></p>
+            <p><%= raw learning.learntags.map(&:name).map{|t|  link_to t, learntag_path(t) }.join(' ') %></p>
+            
+               
+            <% if logged_in? %>
+              <p><%= link_to 'Edit', edit_learning_path(learning) %> |
+              <%= link_to 'Destroy', learning, method: :delete, data: { confirm: 'Are you sure?' } %> |</p>
+            <% end %>
+           
+          
+        </div>
+      <% end %>
+    <% end %>
+     <%= link_to 'Back', learnings_path %>
+  </div>
+</div>
+  
