@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_22_092343) do
+ActiveRecord::Schema.define(version: 2018_11_22_133844) do
 
   create_table "ammunitions", force: :cascade do |t|
     t.string "name"
@@ -102,12 +102,6 @@ ActiveRecord::Schema.define(version: 2018_11_22_092343) do
     t.string "image"
     t.integer "range"
     t.datetime "datenews"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "pictures", force: :cascade do |t|
-    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
