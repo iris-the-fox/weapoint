@@ -97,6 +97,17 @@
   </div>
 
   <div class="field">
+    <%= form.label :rate_of_fire %>
+    <%= form.number_field :rate_of_fire, class: :text_field, step: :any %>
+  </div>
+
+  <div class="field">
+    <%= form.label :summary %>
+    <%= form.text_area :summary, 'data-provider': :summernote %>
+  </div>
+
+
+  <div class="field">
     <%= form.label :img_main %>
     <%= form.text_field :img_main %>
   </div>

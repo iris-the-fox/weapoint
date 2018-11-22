@@ -85,8 +85,14 @@
       <td><strong>stock type:</strong></td>
       <td><%= @firearm.stock_type %></td>
       <td></td></tr>
+    <tr class='even'>
+      <td><strong>rate of fire:</strong></td>
+      <td><%= @firearm.rate_of_fire %></td>
+      <td></td></tr>
  
 </table>
+
+      <p> <%= @firearm.summary.html_safe %></p>
 
 <% if logged_in? %>
 <%= link_to 'Edit', edit_firearm_path(@firearm) %> |

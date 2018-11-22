@@ -17,6 +17,7 @@
     <%= select_tag :am_cap,  options_for_select(Firearm.all.map {|f| f.am_cap}.uniq),  prompt: "Magazine_capacity", class: "form_class" %>
     <%= select_tag :fr_mat,  options_for_select(Firearm.all.map {|f| f.fr_mat}.uniq),  prompt: "Frame material", class: "form_class" %>
     <%= select_tag :stock_type,  options_for_select(Firearm.all.map {|f| f.stock_type}.uniq),  prompt: "Stock type", class: "form_class" %>
+    <%= select_tag :rate_of_fire,  options_for_select(Firearm.all.map {|f| f.rate_of_fire}.uniq),  prompt: "Rate of fire", class: "form_class" %>
 
 
   
