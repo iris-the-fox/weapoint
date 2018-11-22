@@ -26,6 +26,7 @@ class Firearm < ApplicationRecord
       search_hash[:am_cap] = params[:am_cap] unless params[:am_cap].blank?
       search_hash[:fr_mat] = params[:fr_mat] unless params[:fr_mat].blank?
       search_hash[:stock_type] = params[:stock_type] unless params[:stock_type].blank?
+      search_hash[:rate_of_fire] = params[:rate_of_fire] unless params[:rate_of_fire].blank?
 
 
 
