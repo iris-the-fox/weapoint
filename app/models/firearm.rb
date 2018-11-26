@@ -1,4 +1,5 @@
 class Firearm < ApplicationRecord
+  has_many :pictures
 
  
   #def initialize(params)
