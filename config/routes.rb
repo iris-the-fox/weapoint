@@ -15,7 +15,8 @@ Rails.application.routes.draw do
 
  
 
-  resources :choosen_arms, only: [:new, :create, :show]
+  resources :pictures
+  resources :choosen_arms
 
   get "/login" => "sessions#new", as: "login"
   delete "/logout" => "sessions#destroy", as: "logout"

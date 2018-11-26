@@ -14,7 +14,9 @@
 
 
  <%= image_tag( @firearm.img_main, width: '80%') %>
-
+<%  @firearm.pictures.each do |p| %>
+<%= image_tag( p.image.url(:large)) %>
+<% end %>
 
 
   <table>
