@@ -1,8 +1,11 @@
 
-    <%= @picture.firearm_id %>
+    <div>
+    <%= link_to @firearm.name, @firearm %>
   
     <%= @picture.title %>
-    <%= image_tag( @picture.image.url(:large)) %>
+    <br>
+   </div>
+   	<%= image_tag( @picture.image.url(:large)) %>
     <%= @picture.author %>
     <%= @picture.summary %>
     

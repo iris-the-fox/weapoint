@@ -1,4 +1,4 @@
-
+<%= link_to 'Pictures', pictures_path %>
 <table>
   <thead>
     <tr>
@@ -19,7 +19,7 @@
       <th>Am cap</th>
       <th>Fr mat</th>
       <th>Stock type</th>
-      <th>Img main</th>
+      <th>Rate of Fire</th>
       <th colspan="3"></th>
       
       
@@ -46,7 +46,7 @@
         <td><%= firearm.am_cap %></td>
         <td><%= firearm.fr_mat %></td>
         <td><%= firearm.stock_type %></td>
-        <td><%= firearm.img_main %></td>
+        <td><%= firearm.rate_of_fire %></td>
         <td><%= link_to 'Show', firearm %></td>
         <td><%= link_to 'Edit', edit_firearm_path(firearm) %></td>
         <td><%= link_to 'Destroy', firearm, method: :delete, data: { confirm: 'Are you sure?' } %></td>

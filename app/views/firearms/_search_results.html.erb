@@ -2,11 +2,12 @@
 <%#<p> По вашему запросу найдено <%= @firearms.count > результатов </p%>
   <% @firearms.each do |firearm| %>
     <div class='search_result'>
-      
-      
-      <%= image_tag( firearm.img_main, class: "search_result_img") %>
     
       <h3><%= link_to firearm.name, firearm %></h3>
+      <%  if firearm.pictures.first.nil? %>
+      <% else %>
+        <%= image_tag(firearm.pictures.first.image.url(:thumb)) %>
+      <% end %>
       <%= firearm.typearm %> 
       <%= firearm.atstus %>
       <%= firearm.country %>
