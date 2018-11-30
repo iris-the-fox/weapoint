@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
@@ -15,16 +16,16 @@
 
 
 
-    <ul>
-      <li ><%= active_link_to("WEAPOINT", root_path, active: :exclusive) %></li>
-      <li><%= active_link_to("NEWS", posts_path, active: [['posts', 'tags'], []]) %></li>
-      <li><%= active_link_to("FIREARMS", firearms_path) %></li>
-      <li><%= active_link_to("AMMUNITION",  ammunitions_path) %></li>
-      <li><%= active_link_to("LEARNING", learnings_path) %></li>
-      <li><%= active_link_to("CONTACTS", contacts_path) %></li>
+    <ul class="myNav">
+      <li class="myNav"><%= active_link_to("WEAPOINT", root_path, active: :exclusive) %></li>
+      <li class="myNav"><%= active_link_to("NEWS", posts_path, active: [['posts', 'tags'], []]) %></li>
+      <li class="myNav"><%= active_link_to("FIREARMS", firearms_path) %></li>
+      <li class="myNav"><%= active_link_to("AMMUNITION",  ammunitions_path) %></li>
+      <li class="myNav"><%= active_link_to("LEARNING", learnings_path) %></li>
+      <li class="myNav"><%= active_link_to("CONTACTS", contacts_path) %></li>
       <% if logged_in? %>
-      <li><%= active_link_to("ADMIN", admin_path) %></li>
-      <li><%= active_link_to "Logout",  logout_path, method: :delete %></li>
+      <li class="myNav"><%= active_link_to("ADMIN", admin_path) %></li>
+      <li class="myNav"><%= active_link_to "Logout",  logout_path, method: :delete %></li>
       <% end %>
 
     </ul>

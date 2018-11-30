@@ -67,9 +67,10 @@ group :production do
 end
 
 gem 'jquery-rails', '~> 4.3.1'
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap-sass'
 gem 'summernote-rails', '~> 0.8.10.0'
 gem 'simple_form', '~> 3.5.1'
 gem 'active_link_to'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'flex-slider-rails'

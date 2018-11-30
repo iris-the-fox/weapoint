@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require flexslider
 
  */
  
@@ -147,7 +148,7 @@ table, th, td {
 
 
 
-ul {
+ul.myNav{
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -156,11 +157,11 @@ ul {
     width: 100%;
     }
 
-li {
+li.myNav {
     float: left;
 }
 
-li a {
+li.myNav a {
     display: block;
     color: white;
     text-align: center;

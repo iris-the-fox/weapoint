@@ -1,106 +1,122 @@
 <div class="row row-eq-height">
-      <div class="column1_inner">
-       <div class="search_column" >
-        <h4> SPECS </h4>
+  <div class="column1_inner">
+    <div class="search_column" >
+      <h4> SPECS </h4>
          <%# provide(:title, 'Search Firearms') %>
-          <%= render 'search' %>
-        </div>
-      </div>
+        <%= render 'search' %>
+    </div>
+  </div>
 
-<div class="column2_inner">
-<h1>
-    <%= @firearm.name %>
-</h1>
+  <div class="column2_inner">
+    <h1>
+      <%= @firearm.name %>
+    </h1>
+   
+<%# @firearm.pictures.each do |p|%>
 
+ <%#= image_tag(p.image.url(:large)) %>
+ <%# end %>
 
-      <%  if @firearm.pictures.first.nil? %>
-      <% else %>
-        <%  @firearm.pictures.each do |p| %>
-          <%= image_tag( p.image.url(:large)) %>
-        <% end %>
-      <% end %>
+<!-- Place somewhere in the <body> of your page -->
+<% if @firearm.pictures.nil? %>
+<% else %>
+<div class="flexslider">
+  <ul class="slides">
+    <li>
+     <%= image_tag(@firearm.pictures.first.image.url(:thumb)) %>
+    </li>
+    <li>
+      <%= image_tag(@firearm.pictures.last.image.url(:thumb)) %>
+    </li>
 
-
-
-  <table>
-    <tr class='odd'>
-      <td><strong>type:</strong></td>
-      <td><%= @firearm.typearm %></td>
-      <td></td></tr>
-    <tr class='even'>
-      <td><strong>status:</strong></td>
-      <td><%= @firearm.atstus %></td>
-      <td></td></tr>
-    <tr class='odd'>
-      <td><strong>country:</strong></td>
-      <td><%= @firearm.country %></td>
-      <td></td></tr>
-    <tr class='even'>
-      <td><strong>year of appearance:</strong></td>
-      <td><%= @firearm.year %></td>
-      <td></td></tr>
-    <tr class='odd'>
-      <td><strong>caliber:</strong></td>
-      <td><%= @firearm.caliber %></td>
-      <td></td></tr>
-    <tr class='even'>
-      <td><strong>action type:</strong></td>
-      <td><%= @firearm.action_type %></td>
-      <td></td></tr>
-    <tr class='odd'>
-      <td><strong>trigger type:</strong></td>
-      <td><%= @firearm.trigger_type %></td>
-      <td></td></tr>
-    <tr class='even'>
-      <td><strong>feeding mechanism:</strong></td>
-      <td><%= @firearm.feeding_mech %></td>
-      <td></td></tr>
-    <tr class='odd'>
-      <td><strong>barrel length:</strong></td>
-      <td><%= @firearm.barrel_l %></td>
-      <td></td></tr>
-    <tr class='even'>
-      <td><strong>overall length:</strong></td>
-      <td><%= @firearm.over_l %></td>
-      <td></td></tr>
-    <tr class='even'>
-      <td><strong>overall length (folded stock):</strong></td>
-      <td><%= @firearm.over_l_f %></td>
-      <td></td></tr>
-    <tr class='odd'>
-      <td><strong>empty weight:</strong></td>
-      <td><%= @firearm.em_w %></td
-        ><td></td></tr>
-    <tr class='even'>
-      <td><strong>loaded weight:</strong></td>
-      <td><%= @firearm.l_w %></td>
-      <td></td></tr>
-    <tr class='odd'>
-      <td><strong>ammunition capacity:</strong></td>
-      <td><%= @firearm.am_cap %></td>
-      <td></td></tr>
-    <tr class='even'>
-      <td><strong>frame material:</strong></td>
-      <td><%= @firearm.fr_mat %></td>
-      <td></td></tr>
-    <tr class='odd'>
-      <td><strong>stock type:</strong></td>
-      <td><%= @firearm.stock_type %></td>
-      <td></td></tr>
-    <tr class='even'>
-      <td><strong>rate of fire:</strong></td>
-      <td><%= @firearm.rate_of_fire %></td>
-      <td></td></tr>
- 
-</table>
-
-      <p> <%= @firearm.summary.html_safe %></p>
-
-<% if logged_in? %>
-<%= link_to 'Edit', edit_firearm_path(@firearm) %> |
+  </ul>
+</div>
 <% end %>
 
+    <table>
+      <tr class='odd'>
+        <td><strong>type:</strong></td>
+        <td><%= @firearm.typearm %></td>
+        <td></td></tr>
+      <tr class='even'>
+        <td><strong>status:</strong></td>
+        <td><%= @firearm.atstus %></td>
+        <td></td></tr>
+      <tr class='odd'>
+        <td><strong>country:</strong></td>
+        <td><%= @firearm.country %></td>
+        <td></td></tr>
+      <tr class='even'>
+        <td><strong>year of appearance:</strong></td>
+        <td><%= @firearm.year %></td>
+        <td></td></tr>
+      <tr class='odd'>
+        <td><strong>caliber:</strong></td>
+        <td><%= @firearm.caliber %></td>
+        <td></td></tr>
+      <tr class='even'>
+        <td><strong>action type:</strong></td>
+        <td><%= @firearm.action_type %></td>
+        <td></td></tr>
+      <tr class='odd'>
+        <td><strong>trigger type:</strong></td>
+        <td><%= @firearm.trigger_type %></td>
+        <td></td></tr>
+      <tr class='even'>
+        <td><strong>feeding mechanism:</strong></td>
+        <td><%= @firearm.feeding_mech %></td>
+        <td></td></tr>
+      <tr class='odd'>
+        <td><strong>barrel length:</strong></td>
+        <td><%= @firearm.barrel_l %></td>
+        <td></td></tr>
+      <tr class='even'>
+        <td><strong>overall length:</strong></td>
+        <td><%= @firearm.over_l %></td>
+        <td></td></tr>
+      <tr class='even'>
+        <td><strong>overall length (folded stock):</strong></td>
+        <td><%= @firearm.over_l_f %></td>
+        <td></td></tr>
+      <tr class='odd'>
+        <td><strong>empty weight:</strong></td>
+        <td><%= @firearm.em_w %></td
+          ><td></td></tr>
+      <tr class='even'>
+        <td><strong>loaded weight:</strong></td>
+        <td><%= @firearm.l_w %></td>
+        <td></td></tr>
+      <tr class='odd'>
+        <td><strong>ammunition capacity:</strong></td>
+        <td><%= @firearm.am_cap %></td>
+        <td></td></tr>
+      <tr class='even'>
+        <td><strong>frame material:</strong></td>
+        <td><%= @firearm.fr_mat %></td>
+        <td></td></tr>
+      <tr class='odd'>
+        <td><strong>stock type:</strong></td>
+        <td><%= @firearm.stock_type %></td>
+        <td></td></tr>
+      <tr class='even'>
+        <td><strong>rate of fire:</strong></td>
+        <td><%= @firearm.rate_of_fire %></td>
+        <td></td></tr>
+ 
+    </table>
 
-<%= link_to 'Back', firearms_path %>
+    <p> <%= @firearm.summary.html_safe %></p>
+
+    <% if logged_in? %>
+      <%= link_to 'Edit', edit_firearm_path(@firearm) %> |
+    <% end %>
+    
+    
+    <%= link_to 'Back', firearms_path %>
+  </div>
 </div>
-</div>
+
+
+
+
+
