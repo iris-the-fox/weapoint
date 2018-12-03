@@ -19,14 +19,4 @@
 //= require summernote/summernote-lite.js
 //= require summernote-init
 //= require_tree .
-//= require jquery.flexslider
-//= require jquery.flexslider-min   
-
-  $(document).on("turbolinks:load", function() {
-    $('.flexslider').flexslider({
-    	smoothHeight: true
-
-    });
-
-  });
 

@@ -12,7 +12,6 @@
  *
  *= require_tree .
  *= require_self
- *= require flexslider
 
  */
  
@@ -290,8 +289,4 @@ li a.active {
     background-attachment: fixed;
     margin: 0px;
 }
-}
-
-.flex-direction-nav a:before {
-  display: none !important;
 }
