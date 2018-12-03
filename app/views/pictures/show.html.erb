@@ -5,7 +5,10 @@
     <%= @picture.title %>
     <br>
    </div>
+<% if  @picture.image.url.nil? %>
+<% else %>
    	<%= image_tag( @picture.image.url(:large)) %>
+   	<% end %>
     <%= @picture.author %>
     <%= @picture.summary %>
     

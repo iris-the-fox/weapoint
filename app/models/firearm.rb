@@ -1,5 +1,7 @@
 class Firearm < ApplicationRecord
-  has_many :pictures
+  has_many :pictures, dependent: :destroy
+  validates :name, presence: true
+  validates :name, uniqueness: true
 
  
   #def initialize(params)
