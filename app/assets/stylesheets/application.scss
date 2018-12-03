@@ -291,3 +291,7 @@ li a.active {
     margin: 0px;
 }
 }
+
+.flex-direction-nav a:before {
+  display: none !important;
+}
