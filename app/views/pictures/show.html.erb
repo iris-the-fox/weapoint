@@ -1,13 +1,16 @@
-
-    <div>
-    <%= link_to @firearm.name, @firearm %>
+<div>
+    <% if  @picture.imageable_type == 'Firearm' %>
+      <%= link_to @firearm.name, @firearm %>
+    <% else %>
+      <%= link_to @ammunition.name, @ammunition %>
+    <% end %>
   
     <%= @picture.title %>
     <br>
    </div>
 <% if  @picture.image.url.nil? %>
 <% else %>
-   	<%= image_tag( @picture.image.url(:large)) %>
+   	<%= image_tag( @picture.image.url(:show)) %>
    	<% end %>
     <%= @picture.author %>
     <%= @picture.summary %>

@@ -1,6 +1,7 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: [:show, :edit, :update, :destroy]
-  before_action :set_firearm, only: [:show]
+  before_action :set_fire_or_amo, only: [:show]
+ 
 
   # GET /pictures
   # GET /pictures.json
@@ -68,8 +69,12 @@ class PicturesController < ApplicationController
       @picture = Picture.find(params[:id])
 
     end
-    def set_firearm   
-      @firearm = Firearm.find(@picture.imageable_id)
+    def set_fire_or_amo
+      if @picture.imageable_type == 'Firearm'
+        @firearm = Firearm.find(@picture.imageable_id)
+      else
+        @ammunition = Ammunition.find(@picture.imageable_id)
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
