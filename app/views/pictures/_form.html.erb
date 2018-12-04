@@ -12,9 +12,15 @@
     </div>
   <% end %>
   <div class="field">
-    <%= form.label :firearm_id %>
-    <%= form.number_field :firearm_id %>
+    <%= form.label :imageable_id %>
+    <%= form.number_field :imageable_id %>
   </div>
+
+  <div class="field">
+    <%= form.label :imageable_type %>
+    <%= form.text_field :imageable_type %>
+  </div>
+
 
   <div class="field">
     <%= form.label :title %>

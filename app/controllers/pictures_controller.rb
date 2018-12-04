@@ -69,12 +69,12 @@ class PicturesController < ApplicationController
 
     end
     def set_firearm   
-      @firearm = Firearm.find(@picture.firearm_id)
+      @firearm = Firearm.find(@picture.imageable_id)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def picture_params
-      params.require(:picture).permit(:image, :title, :summary, :author, :firearm_id)
+      params.require(:picture).permit(:image, :title, :summary, :author, :imageable_id, :imageable_type)
     end
 
 end
