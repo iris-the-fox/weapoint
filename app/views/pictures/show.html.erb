@@ -1,19 +1,26 @@
-<div>
+<div class="row row-eq-height">
+  <div class="column1_inner">
+
+  </div>
+
+  <div class="column2_inner">
+
     <% if  @picture.imageable_type == 'Firearm' %>
       <%= link_to @firearm.name, @firearm %>
     <% else %>
       <%= link_to @ammunition.name, @ammunition %>
     <% end %>
   
-    <%= @picture.title %>
+    <h3><%= @picture.title %></h3>
     <br>
-   </div>
-<% if  @picture.image.url.nil? %>
-<% else %>
-   	<%= image_tag( @picture.image.url(:show)) %>
-   	<% end %>
-    <%= @picture.author %>
-    <%= @picture.summary %>
-    
-<%= link_to 'Edit', edit_picture_path(@picture) %> |
-<%= link_to 'Back', pictures_path %>
+
+    <div>
+   	  <%= image_tag( @picture.image.url(:show)) %>
+     
+      <p><%= @picture.author %></p>
+      <p><%=raw @picture.summary %></p>
+    </div>    
+    <%= link_to 'Edit', edit_picture_path(@picture) %> |
+    <%= link_to 'Back', pictures_path %>
+  </div>
+</div>
