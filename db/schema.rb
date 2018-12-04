@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_26_111228) do
+ActiveRecord::Schema.define(version: 2018_12_04_090410) do
 
   create_table "ammunitions", force: :cascade do |t|
     t.string "name"
@@ -113,7 +113,10 @@ ActiveRecord::Schema.define(version: 2018_11_26_111228) do
     t.integer "firearm_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "imageable_id"
+    t.string "imageable_type"
     t.index ["firearm_id"], name: "index_pictures_on_firearm_id"
+    t.index ["imageable_type", "imageable_id"], name: "index_pictures_on_imageable_type_and_imageable_id"
   end
 
   create_table "posts", force: :cascade do |t|
