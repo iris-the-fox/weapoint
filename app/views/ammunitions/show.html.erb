@@ -1,41 +1,98 @@
-<p id="notice"><%= notice %></p>
+<div class="row row-eq-height">
+  <div class="column1_inner">
+    <div class="search_column" >
+      <h4> SPECS </h4>
+         <%# provide(:title, 'Search Firearms') %>
+        <%# render 'search' %>
+    </div>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @ammunition.name %>
-</p>
+  <div class="column2_inner">
+    <h1>
+      <%= @ammunition.name %>
+    </h1>
+   
+<%# @firearm.pictures.each do |p|%>
 
-<p>
-  <strong>Type bul:</strong>
-  <%= @ammunition.type_bul %>
-</p>
+ <%#= image_tag(p.image.url(:large)) %>
+ <%# end %>
 
-<p>
-  <strong>Country:</strong>
-  <%= @ammunition.country %>
-</p>
+<!-- Place somewhere in the <body> of your page -->
 
-<p>
-  <strong>Weight:</strong>
-  <%= @ammunition.weight %>
-</p>
+<% if @ammunition.pictures.nil? %>
+<% else %>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <% @ammunition.pictures.each_with_index do |slide, i| %>
+   
+      <li data-target="#carousel-example-generic" data-slide-to= <%= i %>  class=" <%= 'active' if i == 0 %>"></li>
+    <% end %>
 
-<p>
-  <strong>Speed:</strong>
-  <%= @ammunition.speed %>
-</p>
+  </ol>
 
-<p>
-  <strong>Energy:</strong>
-  <%= @ammunition.energy %>
-</p>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <% @ammunition.pictures.each_with_index do |slide, i| %>
+      <div class="item <%= 'active' if i == 0 %>">
+        <%= image_tag(slide.image.url(:show)) %>
+         <div class="carousel-caption">
+       <h3> <%= slide.title %> </h3>
+       <p> <%=raw slide.summary %> </p>
+      </div>
+      </div>
+      
+    <% end %>
+  </div>
 
-<p>
-  <strong>Note:</strong>
-  <%= @ammunition.note %>
-</p>
-<% if logged_in? %>
-<%= link_to 'Edit', edit_ammunition_path(@ammunition) %> |
+  
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 <% end %>
 
-<%= link_to 'Back', ammunitions_path %>
+
+<br>
+    <table>
+      <tr class='odd'>
+        <td><strong>type:</strong></td>
+        <td><%= @ammunition.type_bul %></td>
+        <td></td></tr>
+      <tr class='even'>
+        <td><strong>country:</strong></td>
+        <td><%= @ammunition.country %></td>
+        <td></td></tr>
+      <tr class='even'>
+        <td><strong>weight:</strong></td>
+        <td><%= @ammunition.weight %></td>
+        <td></td></tr>
+      <tr class='odd'>
+        <td><strong>speed:</strong></td>
+        <td><%= @ammunition.speed %></td>
+        <td></td></tr>
+      <tr class='even'>
+        <td><strong>energy:</strong></td>
+        <td><%= @ammunition.energy %></td>
+        <td></td></tr>
+      
+ 
+    </table>
+
+    <p> <%= @ammunition.note.html_safe %></p>
+
+  
+
+    <% if logged_in? %>
+      <%= link_to 'Edit', edit_ammunition_path(@ammunition) %> |
+    <% end %>
+    <%= link_to 'Back', ammunitions_path %>
+  </div>
+</div> 
