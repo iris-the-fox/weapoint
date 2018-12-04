@@ -20,7 +20,7 @@
                  
           
           <p><%# learning.body.html_safe %>
-            <%= learning.summary %>
+            <%= raw learning.summary %>
           </p>
           
          <p><%= raw learning.learntags.map(&:name).map{|t|  link_to t, learntag_path(t) }.join(' ') %></p>
