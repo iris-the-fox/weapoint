@@ -3,30 +3,34 @@
   <% @firearms.each do |firearm| %>
     <div class='search_result'>
     
-      <h3><%= link_to firearm.name, firearm %></h3>
+      
       <%  if firearm.pictures.first.nil? %>
       <% else %>
-        <%= image_tag(firearm.pictures.first.image.url(:thumb)) %>
+        <%= image_tag(firearm.pictures.first.image.url(:thumb), class: "img_search_result") %>
       <% end %>
-      <%= firearm.typearm %> 
-      <%= firearm.atstus %>
-      <%= firearm.country %>
-      <%= firearm.year %>
-      <%= firearm.caliber %>
-      <%= firearm.action_type %>
-      <%= firearm.trigger_type %>
-      <%= firearm.feeding_mech %>
-      <%= firearm.barrel_l %>
-      <%= firearm.over_l %>
-      <%= firearm.over_l_f %>
-      <%= firearm.em_w %>
-      <%= firearm.l_w %>
-      <%= firearm.am_cap %>
-      <%= firearm.fr_mat %>
-      <%= firearm.stock_type %>
-      <%= firearm.rate_of_fire %>
-      <p> <%= firearm.summary.html_safe %></p>
-  
+      <div class ="txt_search_result">
+        <h3 ><%= link_to firearm.name, firearm %></h3>
+        <p> 
+        <%= firearm.typearm %><% unless firearm.typearm.nil? ||   firearm.typearm == ""%>, <% end %>
+        <%= firearm.atstus %><% unless firearm.atstus.nil? ||   firearm.atstus == ""%>, <% end %>
+        <%= firearm.country %><% unless firearm.country.nil? ||   firearm.country == ""%>, <% end %>
+        <%= firearm.year %><% unless firearm.year.nil? ||   firearm.year == ""%>, <% end %>
+        <%= firearm.caliber %><% unless firearm.caliber.nil? ||   firearm.caliber == ""%>, <% end %>
+        <%= firearm.action_type %><% unless firearm.action_type.nil? ||   firearm.action_type == ""%>, <% end %>
+        <%= firearm.trigger_type %><% unless firearm.trigger_type.nil? ||  firearm.trigger_type == ""%>, <% end %>
+        <%= firearm.feeding_mech %><% unless firearm.feeding_mech.nil? ||  firearm.feeding_mech == ""%>, <% end %>
+        <%= firearm.barrel_l %><% unless firearm.barrel_l.nil? ||   firearm.barrel_l == ""%>mm, <% end %>
+        <%= firearm.over_l %><% unless firearm.over_l.nil? ||   firearm.over_l == ""%>mm, <% end %>
+        <%= firearm.over_l_f %><% unless firearm.over_l_f.nil? ||   firearm.over_l_f == ""%>mm, <% end %>
+        <%= firearm.em_w %><% unless firearm.em_w.nil? ||   firearm.em_w == "" %>kg, <% end %>
+        <%= firearm.l_w %><% unless firearm.l_w.nil? ||   firearm.l_w == ""%>kg, <% end %>
+        <%= firearm.am_cap %><% unless firearm.am_cap.nil? ||   firearm.am_cap == "" %>, <% end %>
+        <%= firearm.rate_of_fire %><% unless firearm.rate_of_fire.nil? ||  firearm.rate_of_fire == "" %>rpm, <% end %>
+        <%= firearm.fr_mat %><% unless firearm.fr_mat.nil? ||   firearm.fr_mat == "" %>, <% end %>
+        <%= firearm.stock_type %><% unless firearm.stock_type.nil? ||   firearm.stock_type == ""%> <% end %>
+        </p>  
+        <p> <%= firearm.summary.html_safe %></p>
+      </div>
     </div>
      
   <% end %>

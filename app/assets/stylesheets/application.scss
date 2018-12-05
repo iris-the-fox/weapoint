@@ -205,10 +205,20 @@ li a.active {
 }
 
 .search_result {
-    padding: 20px;
+    
     border-bottom: solid 0.5px #D1D1D1;
     overflow: auto;
     padding: 5px;
+}
+
+.img_search_result {
+  overflow: auto;
+  padding: 5px;
+  float: left;
+}
+.txt_search_result {
+  overflow: auto;
+  padding: 5px;
 }
 
 .search_column {
