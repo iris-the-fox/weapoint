@@ -139,7 +139,7 @@ table, th, td {
 }
 
 
- .sticky-top {
+.sticky-top {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
@@ -242,6 +242,18 @@ li a.active {
     float: left;
 
 }
+
+.carousel-caption {
+    position: relative;
+    left: auto;
+    right: auto;
+    color: inherit;
+    text-shadow: inherit;
+}
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+
 
 @media screen and (min-width:700px) {
          
