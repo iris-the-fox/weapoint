@@ -15,10 +15,12 @@ class AmmunitionsController < ApplicationController
   # GET /ammunitions/new
   def new
     @ammunition = Ammunition.new
+    @ammunition.pictures.build
   end
 
   # GET /ammunitions/1/edit
   def edit
+    @ammunition.pictures.build
   end
 
   # POST /ammunitions
@@ -69,6 +71,7 @@ class AmmunitionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ammunition_params
-      params.require(:ammunition).permit(:name, :type_bul, :country, :weight, :speed, :energy, :note)
+      params.require(:ammunition).permit(:name, :type_bul, :country, :weight, :speed, :energy, :note,
+        pictures_attributes: Picture.attribute_names.map(&:to_sym).push(:_destroy))
     end
 end
