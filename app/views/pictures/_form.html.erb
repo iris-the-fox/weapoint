@@ -1,4 +1,4 @@
-
+<div class ="editing-block">
 <%= simple_form_for @picture, defaults: { required: false }, html: {multipart: true} do |form| %>
   <% if picture.errors.any? %>
     <div id="error_explanation">
@@ -25,11 +25,19 @@
     <%= form.input :title, label: 'Title'%>
   </div>
 
+  <% if  @picture.image.file %>
+  <p> Your file: <%= @picture.image.file.filename %></p>
+  <%= image_tag(@picture.image.url(:thumb)) %>
+  
+  <p> Browse another: </p>
+
+  <% end %>
+
    <div class="field">
 
     <%= form.input_field :image, label: 'Image' %>
   </div>
-<%= @picture.image.file.filename if @picture.image.file %>
+
   <div class="field">
     <%= form.label :author %>
     <%= form.text_field :author %>
@@ -48,4 +56,4 @@
     <%= form.submit %>
   </div>
 <% end %>
-
+</div>

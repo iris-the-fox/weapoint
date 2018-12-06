@@ -1,4 +1,4 @@
-<%= form_with(model: ammunition, local: true) do |form| %>
+<%= simple_form_for @ammunition, defaults: { required: false } do |form| %>
   <% if ammunition.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(ammunition.errors.count, "error") %> prohibited this ammunition from being saved:</h2>
@@ -51,26 +51,32 @@
   <div class= "editing-block">
 
       <h2> Add picture </h2>
-      <%= form.fields_for :pictures do |s| %>
+      <%= form.fields_for :pictures,  defaults: { required: false } do |picf| %>
         
-        <div class="field">
-          <%= s.label :title %>
-          <%= s.text_field :title %>
-        </div>
-        <div class="field"> 
-          <%= s.label :image %>
-          <%= s.file_field :image %>
-        </div>
-        <div class="field">
-          <%= s.label :author %>
-          <%= s.text_field :author %>
-        </div>
-        <div class="field">
-          <%= s.label :summary %>
-          <%= s.text_area :summary, 'data-provider': :summernote %>
-        </div>
+      <div class="field">
+          <%= picf.input :title, label: 'Title'%>
+      </div>
+    
+      
+      <div class="field">
+        <%= picf.label 'Image' %>
+        <%= picf.input_field :image %>
+      </div>
+
+      <div class="field">
+        <%= picf.label :author %>
+        <%= picf.text_field :author %>
+      </div>
+      <div class="field">
+        <%= picf.label :summary %>
+        <%= picf.text_area :summary, 'data-provider': :summernote %>
+      </div>
+
+     
+
       <% end %>
->
+
+
   </div>
   <div class="actions">
     <%= form.submit %>
