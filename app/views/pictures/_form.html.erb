@@ -1,5 +1,5 @@
 
-<%= form_for @picture, html: {multipart: true} do |form| %>
+<%= simple_form_for @picture, defaults: { required: false }, html: {multipart: true} do |form| %>
   <% if picture.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
@@ -22,15 +22,14 @@
   </div>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.input :title, label: 'Title'%>
   </div>
 
    <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
-  </div>
 
+    <%= form.input_field :image, label: 'Image' %>
+  </div>
+<%= @picture.image.file.filename %>
   <div class="field">
     <%= form.label :author %>
     <%= form.text_field :author %>
