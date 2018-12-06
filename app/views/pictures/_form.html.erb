@@ -29,7 +29,7 @@
 
     <%= form.input_field :image, label: 'Image' %>
   </div>
-<%= @picture.image.file.filename %>
+<%= @picture.image.file.filename if @picture.image.file %>
   <div class="field">
     <%= form.label :author %>
     <%= form.text_field :author %>
