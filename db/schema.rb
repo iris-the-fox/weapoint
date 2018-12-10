@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_04_090410) do
+ActiveRecord::Schema.define(version: 2018_12_10_135933) do
 
   create_table "ammunitions", force: :cascade do |t|
     t.string "name"
@@ -107,7 +107,6 @@ ActiveRecord::Schema.define(version: 2018_12_04_090410) do
 
   create_table "pictures", force: :cascade do |t|
     t.string "image"
-    t.string "title"
     t.string "author"
     t.string "summary"
     t.integer "firearm_id"

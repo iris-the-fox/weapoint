@@ -10,7 +10,6 @@
       <thead>
         <tr>
           <td>Belongs to</td>
-          <td>Title</td>
           <td></td>
           <td>Author</td>
           <td>Summary</td>
@@ -24,7 +23,6 @@
           <tr>
     
             <td><%= picture.imageable_type %> № <%= picture.imageable_id %></td>
-            <td><%= picture.title %></td>
             <td><%= image_tag( picture.image.url(:thumb)) %></td>
             <td><%= picture.author %></td>
             <td><%= raw picture.summary %></td>

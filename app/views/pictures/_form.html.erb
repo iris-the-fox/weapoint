@@ -21,10 +21,6 @@
     <%= form.text_field :imageable_type %>
   </div>
 
-  <div class="field">
-    <%= form.input :title, label: 'Title'%>
-  </div>
-
   <% if  @picture.image.file %>
   <p> Your file: <%= @picture.image.file.filename %></p>
   <%= image_tag(@picture.image.url(:thumb)) %>

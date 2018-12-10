@@ -52,11 +52,6 @@
 
       <h2> Add picture </h2>
       <%= form.fields_for :pictures,  defaults: { required: false } do |picf| %>
-        
-      <div class="field">
-          <%= picf.input :title, label: 'Title'%>
-      </div>
-    
       
       <div class="field">
         <%= picf.label 'Image' %>
