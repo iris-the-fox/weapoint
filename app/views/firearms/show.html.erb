@@ -35,10 +35,12 @@
     <% @firearm.pictures.each_with_index do |slide, i| %>
       <div class="item <%= 'active' if i == 0 %>">
         <%= image_tag(slide.image.url(:show)) %>
-         <div class="carousel-caption">
-       <h3> <%= slide.title %> </h3>
-       <p> <%=raw slide.summary %> </p>
-      </div>
+        <div class="carousel-caption">
+          <% unless slide.author.nil? || slide.author == ''%> 
+          <h3> © <%= slide.author %> </h3>
+          <% end %> 
+          <p> <%=raw slide.summary %> </p>
+        </div>
       </div>
       
     <% end %>

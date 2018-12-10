@@ -17,8 +17,7 @@
        
           <h2> <%= link_to post.title , post %> </h2>
           <p class='date'>Posted on <%= post.datenews.to_formatted_s(:default) if post.datenews? %>, <%# link_to 'link', post_path(post, anchor: 'disqus_thread') %>
-          <a href="<%=post_path(post, anchor: 'disqus_thread')%>" data-disqus-identifier="<%=post.id%>">0 Comments</a> или  без ссылки непосредственно на тред:
-          <span class="disqus-comment-count" data-disqus-identifier="<%=post.id%>"> 0 Comments </span></p>
+          <a href="<%=post_path(post, anchor: 'disqus_thread')%>" data-disqus-identifier="<%=post.id%>">0 Comments</a> </p>
 
           
           
