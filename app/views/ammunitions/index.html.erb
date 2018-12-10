@@ -25,7 +25,7 @@
         <td><%= ammunition.weight %></td>
         <td><%= ammunition.speed %></td>
         <td><%= ammunition.energy %></td>
-        <td><%= ammunition.note %></td>
+        <td><%=raw ammunition.note %></td>
         <td><%= link_to 'Show', ammunition %></td>
         <% if logged_in? %>
         <td><%= link_to 'Edit', edit_ammunition_path(ammunition) %></td>
