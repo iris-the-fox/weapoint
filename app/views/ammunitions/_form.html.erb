@@ -1,4 +1,4 @@
-<%= simple_form_for @ammunition, defaults: { required: false } do |form| %>
+<%= simple_form_for @ammunition, defaults: { required: false } do |f| %>
   <% if ammunition.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(ammunition.errors.count, "error") %> prohibited this ammunition from being saved:</h2>
@@ -13,68 +13,59 @@
 <div class ="editing-block">
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :type_bul %>
-    <%= form.text_field :type_bul %>
+    <%= f.label :type_bul %>
+    <%= f.text_field :type_bul %>
   </div>
 
   <div class="field">
-    <%= form.label :country %>
-    <%= form.text_field :country %>
+    <%= f.label :country %>
+    <%= f.text_field :country %>
   </div>
 
   <div class="field">
-    <%= form.label :weight %>
-    <%= form.number_field :weight %>
+    <%= f.label :weight %>
+    <%= f.number_field :weight %>
   </div>
 
   <div class="field">
-    <%= form.label :speed %>
-    <%= form.number_field :speed %>
+    <%= f.label :speed %>
+    <%= f.number_field :speed %>
   </div>
 
   <div class="field">
-    <%= form.label :energy %>
-    <%= form.number_field :energy %>
+    <%= f.label :energy %>
+    <%= f.number_field :energy %>
   </div>
 
   <div class="field">
-    <%= form.label 'Note' %>
-    <%= form.text_area :note, 'data-provider': :summernote %>
+    <%= f.label 'Note' %>
+    <%= f.text_area :note, 'data-provider': :summernote %>
   </div>
 </div>
 
   <div class= "editing-block">
 
       <h2> Add picture </h2>
-      <%= form.fields_for :pictures,  defaults: { required: false } do |picf| %>
-      
-      <div class="field">
-        <%= picf.label 'Image' %>
-        <%= picf.input_field :image %>
-      </div>
 
-      <div class="field">
-        <%= picf.label :author %>
-        <%= picf.text_field :author %>
+   
+<%= f.fields_for :pictures, defaults: { required: false } do |picture| %>
+        <%= render 'picture_fields', :f => picture %>
+      <% end %>
+      <div class='links'>
+        <%= link_to_add_association 'add picture', f, :pictures %>
       </div>
-      <div class="field">
-        <%= picf.label :summary %>
-        <%= picf.text_area :summary, 'data-provider': :summernote %>
-      </div>
-
      
 
-      <% end %>
-
+ 
 
   </div>
   <div class="actions">
-    <%= form.submit %>
+    <%= f.submit %>
   </div>
 <% end %>
 

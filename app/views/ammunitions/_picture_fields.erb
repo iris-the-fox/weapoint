@@ -1,0 +1,17 @@
+
+<div class='nested-fields editing-block'>
+  <div class="field">
+    <%= f.file_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :author %>
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :summary %>
+    <%= f.text_area :summary, 'data-provider': :summernote %>
+  </div>
+    <%= link_to_remove_association "remove picture", f %>
+   
+    
+</div>
