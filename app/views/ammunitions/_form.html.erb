@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-<div class ="editing-block">
+
 
   <div class="field">
     <%= f.label :name %>
@@ -46,14 +46,13 @@
     <%= f.label 'Note' %>
     <%= f.text_area :note, 'data-provider': :summernote %>
   </div>
-</div>
 
-  <div class= "editing-block">
+
 
       <h2> Add picture </h2>
 
    
-<%= f.fields_for :pictures, defaults: { required: false } do |picture| %>
+<%= f.fields_for :pictures do |picture| %>
         <%= render 'picture_fields', :f => picture %>
       <% end %>
       <div class='links'>
@@ -63,7 +62,7 @@
 
  
 
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

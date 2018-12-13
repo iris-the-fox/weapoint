@@ -51,6 +51,12 @@
 </html>
 
     
-  
+<script>
+  $('form').on('cocoon:after-insert', function(e, insertedItem) {
+    insertedItem.find('[data-provider="summernote"]').each(function() {
+      $(this).summernote();  
+    })  
+});
+</script>
  
 

@@ -16,9 +16,9 @@
 //= require turbolinks
 //= require bootstrap
 //= require bootstrap-sprockets
-//= require cocoon
 //= require summernote/summernote-bs4.min
 //= require summernote/summernote-lite.js
 //= require summernote-init
+//= require cocoon
 //= require_tree .
 
