@@ -11,6 +11,7 @@
     </div>
   <% end %>
 
+<div class="editing-block">
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
@@ -22,7 +23,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :atstus %>
+    <%= form.label "Status" %>
     <%= form.text_field :atstus %>
   </div>
 
@@ -57,43 +58,33 @@
   </div>
 
   <div class="field">
-    <%= form.label :barrel_l %>
+    <%= form.label "Barrel length" %>
     <%= form.number_field :barrel_l %>
   </div>
 
   <div class="field">
-    <%= form.label :over_l %>
+    <%= form.label "Overall length" %>
     <%= form.number_field :over_l %>
   </div>
 
   <div class="field">
-    <%= form.label :over_l_f %>
+    <%= form.label "Overall length (folded stock)" %>
     <%= form.number_field :over_l_f %>
   </div>
 
   <div class="field">
-    <%= form.label :em_w %>
+    <%= form.label "Empty weght"%>
     <%= form.number_field :em_w %>
   </div>
 
   <div class="field">
-    <%= form.label :l_w %>
+    <%= form.label "Loaded weght" %>
     <%= form.number_field :l_w %>
   </div>
 
   <div class="field">
-    <%= form.label :am_cap %>
+    <%= form.label "Magazine capacity" %>
     <%= form.number_field :am_cap %>
-  </div>
-
-  <div class="field">
-    <%= form.label :fr_mat %>
-    <%= form.text_field :fr_mat %>
-  </div>
-
-  <div class="field">
-    <%= form.label :stock_type %>
-    <%= form.text_field :stock_type %>
   </div>
 
   <div class="field">
@@ -102,8 +93,27 @@
   </div>
 
   <div class="field">
+    <%= form.label "Frame material" %>
+    <%= form.text_field :fr_mat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stock_type %>
+    <%= form.text_field :stock_type %>
+  </div>
+
+
+
+  <div class="field">
     <%= form.label :summary %>
     <%= form.text_area :summary, 'data-provider': :summernote %>
+  </div>
+</div>
+  <%= form.fields_for :pictures do |picture| %>
+    <%= render 'picture_fields', :f => picture %>
+  <% end %>
+  <div class='links'>
+    <%= link_to_add_association 'add picture', form, :pictures, class: "like-btn move-right" %>
   </div>
 
 

@@ -71,6 +71,8 @@ class FirearmsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def firearm_params
-      params.require(:firearm).permit(:name, :typearm, :atstus, :country, :year, :caliber, :action_type, :trigger_type, :feeding_mech, :barrel_l, :over_l, :over_l_f, :em_w, :l_w, :am_cap, :fr_mat, :stock_type, :rate_of_fire, :summary)
+      params.require(:firearm).
+         permit(:name, :typearm, :atstus, :country, :year, :caliber, :action_type, :trigger_type, :feeding_mech, :barrel_l, :over_l, :over_l_f, :em_w, :l_w, :am_cap, :fr_mat, :stock_type, :rate_of_fire, :summary,
+         pictures_attributes: Picture.attribute_names.map(&:to_sym).push(:_destroy))
     end
 end
