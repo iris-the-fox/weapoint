@@ -1,3 +1,4 @@
+
 <%= simple_form_for @ammunition, defaults: { required: false } do |f| %>
   <% if ammunition.errors.any? %>
     <div id="error_explanation">
@@ -12,59 +13,55 @@
   <% end %>
 
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class="editing-block">
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :type_bul %>
+      <%= f.text_field :type_bul %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :country %>
+      <%= f.text_field :country %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :weight %>
+      <%= f.number_field :weight %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :speed %>
+      <%= f.number_field :speed %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :energy %>
+      <%= f.number_field :energy %>
+    </div>
+  
+    <div class="field">
+      <%= f.label 'Note' %>
+      <%= f.text_area :note, 'data-provider': :summernote %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :type_bul %>
-    <%= f.text_field :type_bul %>
-  </div>
-
-  <div class="field">
-    <%= f.label :country %>
-    <%= f.text_field :country %>
-  </div>
-
-  <div class="field">
-    <%= f.label :weight %>
-    <%= f.number_field :weight %>
-  </div>
-
-  <div class="field">
-    <%= f.label :speed %>
-    <%= f.number_field :speed %>
-  </div>
-
-  <div class="field">
-    <%= f.label :energy %>
-    <%= f.number_field :energy %>
-  </div>
-
-  <div class="field">
-    <%= f.label 'Note' %>
-    <%= f.text_area :note, 'data-provider': :summernote %>
-  </div>
-
-
-
-      <h2> Add picture </h2>
+  <h2> Add picture </h2>
 
    
-<%= f.fields_for :pictures do |picture| %>
-        <%= render 'picture_fields', :f => picture %>
-      <% end %>
-      <div class='links'>
-        <%= link_to_add_association 'add picture', f, :pictures %>
-      </div>
-     
-
- 
-
-
+  <%= f.fields_for :pictures do |picture| %>
+    <%= render 'picture_fields', :f => picture %>
+  <% end %>
+  <div class='links'>
+    <%= link_to_add_association 'add picture', f, :pictures, class: "like-btn move-right" %>
+  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
 

@@ -151,7 +151,6 @@ table, th, td {
   }
 
 
-
 ul.myNav{
     list-style-type: none;
     margin: 0;
@@ -183,7 +182,8 @@ li a:hover:not(.active) {
 li a.active {
     background-color: #BE2D2D;
 }
-/* Create three equal columns that floats next to each other */
+
+
 .column1 {
     float: left;
     width: 75%;
@@ -192,8 +192,7 @@ li a.active {
     padding-top: 5px;
     float: left;
     width: 25%;
-    
-    
+
 }
 
 .column1_inner {
@@ -220,6 +219,7 @@ li a.active {
   padding: 5px;
   float: left;
 }
+
 .txt_search_result {
   overflow: auto;
   padding: 5px;
@@ -258,7 +258,24 @@ li a.active {
     margin: 0 auto;
 }
 
+.admin-view {
+    min-height: 400px;
+}
 
+.like-btn {
+  border-radius: 5px;
+  background: #d88181;
+  padding: 5px; 
+  color: black;
+  
+}
+
+.actions {
+  margin: 10px;
+}
+.move-right {
+  margin-left: 10px;
+}
 @media screen and (min-width:700px) {
          
      .row-eq-height {
@@ -276,9 +293,6 @@ li a.active {
     clear: both;
 }
 
-.admin-view {
-    min-height: 400px;
-}
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
 @media screen and (max-width:700px) {
