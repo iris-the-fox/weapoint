@@ -3,7 +3,7 @@
   <%= hidden_field_tag :search %>
 
     <%= select_tag :typearm,  options_for_select(Firearm.all.map {|f| f.typearm}.uniq),  prompt: "Type", class: "form_class" %>
-    <%= select_tag :status,  options_for_select(Firearm.all.map {|f| f.atstus}.uniq),  prompt: "Status", class: "form_class" %>
+    <%= select_tag :atstus,  options_for_select(Firearm.all.map {|f| f.atstus}.uniq),  prompt: "Status", class: "form_class" %>
     <%= select_tag :country,  options_for_select(Firearm.all.map {|f| f.country}.uniq),  prompt: "Country", class: "form_class" %>
     <%= select_tag :year,  options_for_select(Firearm.all.map {|f| f.year}.uniq),  prompt: "Year of appearance", class: "form_class" %>
     <%= select_tag :caliber,  options_for_select(Firearm.all.map {|f| f.caliber}.uniq),  prompt: "Caliber", class: "form_class" %>

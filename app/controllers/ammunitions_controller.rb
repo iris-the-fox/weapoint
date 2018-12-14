@@ -4,7 +4,8 @@ class AmmunitionsController < ApplicationController
   # GET /ammunitions
   # GET /ammunitions.json
   def index
-    @ammunitions = Ammunition.all
+    @ammos = Ammunition.all
+    @ammunitions = Ammunition.search(params)
   end
 
   # GET /ammunitions/1

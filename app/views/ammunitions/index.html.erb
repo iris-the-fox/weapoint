@@ -1,44 +1,20 @@
 
+<div class="row row-eq-height">
+      <div class="column1_inner">
+        <div class="search_column" >
+        <h4> SPECS </h4>
+          <%= render 'search' %>
+        </div>
+      
+      </div>
 
-<h1>Ammunitions</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type bul</th>
-      <th>Country</th>
-      <th>Weight</th>
-      <th>Speed</th>
-      <th>Energy</th>
-      <th>Note</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @ammunitions.each do |ammunition| %>
-      <tr>
-        <td><%= ammunition.name %></td>
-        <td><%= ammunition.type_bul %></td>
-        <td><%= ammunition.country %></td>
-        <td><%= ammunition.weight %></td>
-        <td><%= ammunition.speed %></td>
-        <td><%= ammunition.energy %></td>
-        <td><%=raw ammunition.note %></td>
-        <td><%= link_to 'Show', ammunition %></td>
-        <% if logged_in? %>
-        <td><%= link_to 'Edit', edit_ammunition_path(ammunition) %></td>
-        <td><%= link_to 'Destroy', ammunition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-        
-        
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+      <div class="column2_inner ">
+         <% if !@ammunitions.nil? %>
+           <%= render 'search_results' %>
+        <% else %>
+        <h2> Chose from SPEC list.. </h2>
+         <% end %>  
+      </div>
+</div>
 <br>
-<% if logged_in? %>
-<%= link_to 'New Ammunition', new_ammunition_path, class: "move-right" %>
-<% end %>
+<br>

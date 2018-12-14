@@ -1,0 +1,17 @@
+<%= form_tag(ammunitions_path, method: 'get') do %>
+
+  <%= hidden_field_tag :search %>
+
+    <%= select_tag :type_bul,  options_for_select(Ammunition.all.map {|f| f.type_bul}.uniq),  prompt: "Type", class: "form_class" %>
+    <%= select_tag :country,  options_for_select(Ammunition.all.map {|f| f.country}.uniq),  prompt: "Country", class: "form_class" %>
+    <%= select_tag :weight,  options_for_select(Ammunition.all.map {|f| f.weight}.uniq),  prompt: "Weight", class: "form_class" %>
+    <%= select_tag :speed,  options_for_select(Ammunition.all.map {|f| f.speed}.uniq),  prompt: "Speed", class: "form_class" %>
+    <%= select_tag :energy,  options_for_select(Ammunition.all.map {|f| f.energy}.uniq),  prompt: "Enenrgy", class: "form_class" %>
+ 
+   
+  
+    <%= submit_tag "Search", :name => nil, class: "button center" %>
+ 
+
+<% end %>
+
