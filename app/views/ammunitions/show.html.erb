@@ -21,10 +21,10 @@
 
 <% if @ammunition.pictures.nil? %>
 <% else %>
-<p class="imglist" style="max-width: 1000px;">
+<p class="imglist carousel_wrap" style="max-width: 1000px;">
  <% @ammunition.pictures.each do |slide| %>
  <% cap = slide.author.blank? ? "#{slide.summary}" : "© #{slide.author} #{slide.summary}" %>
- <%= link_to image_tag(slide.image.url(:thumb)), slide.image.url(:large), data: { fancybox: "gallery", caption: cap }  %>
+ <%= link_to image_tag(slide.image.url(:thumb)), slide.image.url(:large), data: { fancybox: "gallery", caption: cap }, class:"carousel_item"  %>
 <% end %>
 </p>
 
