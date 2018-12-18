@@ -23,7 +23,7 @@
 <% else %>
 <p class="imglist" style="max-width: 1000px;">
  <% @ammunition.pictures.each do |slide| %>
- <% cap = slide.author.blank? ? "#{slide.summary}" : "(c) #{slide.author} #{slide.summary}" %>
+ <% cap = slide.author.blank? ? "#{slide.summary}" : "© #{slide.author} #{slide.summary}" %>
  <%= link_to image_tag(slide.image.url(:thumb)), slide.image.url(:large), data: { fancybox: "gallery", caption: cap }  %>
 <% end %>
 </p>
