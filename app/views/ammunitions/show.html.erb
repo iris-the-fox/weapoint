@@ -21,44 +21,13 @@
 
 <% if @ammunition.pictures.nil? %>
 <% else %>
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <% @ammunition.pictures.each_with_index do |slide, i| %>
-   
-      <li data-target="#carousel-example-generic" data-slide-to= <%= i %>  class=" <%= 'active' if i == 0 %>"></li>
-    <% end %>
+<p class="imglist" style="max-width: 1000px;">
+ <% @ammunition.pictures.each do |slide| %>
+ <% cap = slide.author.blank? ? "#{slide.summary}" : "(c) #{slide.author} #{slide.summary}" %>
+ <%= link_to image_tag(slide.image.url(:thumb)), slide.image.url(:large), data: { fancybox: "gallery", caption: cap }  %>
+<% end %>
+</p>
 
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <% @ammunition.pictures.each_with_index do |slide, i| %>
-      <div class="item <%= 'active' if i == 0 %>">
-        <%= image_tag(slide.image.url(:show)) %>
-        <div class="carousel-caption">
-          <% unless slide.author.nil? || slide.author == ''%> 
-          <h3> © <%= slide.author %> </h3>
-          <% end %>
-          <p> <%=raw slide.summary %> </p>
-        </div>
-      </div>
-      
-    <% end %>
-  </div>
-
-  
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
 <% end %>
 
 
