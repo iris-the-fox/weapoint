@@ -36,23 +36,23 @@
       <tr class='odd'>
         <td><strong>type:</strong></td>
         <td><%= @ammunition.type_bul %></td>
-        <td><%= auto_link @ammunition.additional_ammo.type_bul , :html => { :target => '_blank' }%></td></tr>
+        <td><%= auto_link @add_amm.type_bul , :html => { :target => '_blank' } unless @add_amm.nil? %></td></tr>
       <tr class='even'>
         <td><strong>country:</strong></td>
         <td><%= @ammunition.country %></td>
-        <td><%=auto_link  @ammunition.additional_ammo.country , :html => { :target => '_blank' }%></td></tr>
+        <td><%=auto_link  @add_amm.country , :html => { :target => '_blank' } unless @add_amm.nil? %></td></tr>
       <tr class='even'>
         <td><strong>weight:</strong></td>
         <td><%= @ammunition.weight %></td>
-        <td><%= auto_link @ammunition.additional_ammo.weight , :html => { :target => '_blank' }%></td></tr>
+        <td><%= auto_link @add_amm.weight , :html => { :target => '_blank' } unless @add_amm.nil? %></td></tr>
       <tr class='odd'>
         <td><strong>speed:</strong></td>
         <td><%= @ammunition.speed %></td>
-        <td><%= auto_link @ammunition.additional_ammo.speed , :html => { :target => '_blank' }%></td></tr>
+        <td><%= auto_link @add_amm.speed , :html => { :target => '_blank' } unless @add_amm.nil? %></td></tr>
       <tr class='even'>
         <td><strong>energy:</strong></td>
         <td><%= @ammunition.energy %></td>
-        <td><%= auto_link @ammunition.additional_ammo.energy , :html => { :target => '_blank' }%></td></tr>
+        <td><%= auto_link @add_amm.energy , :html => { :target => '_blank' } unless @add_amm.nil? %></td></tr>
       
  
     </table>

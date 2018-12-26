@@ -298,6 +298,8 @@ li a.active {
     text-align: left;
     /*display: inline;  /* IE7- */
     /*zoom: 1; /* IE7- */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media screen and (min-width:700px) {

@@ -17,12 +17,13 @@ class AmmunitionsController < ApplicationController
   def new
     @ammunition = Ammunition.new
     @ammunition.pictures.build
-    
+    @ammunition.build_additional_ammo
   end
 
   # GET /ammunitions/1/edit
   def edit
-    
+    @ammunition.pictures.build
+    @ammunition.build_additional_ammo
   end
 
   # POST /ammunitions
@@ -69,6 +70,7 @@ class AmmunitionsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_ammunition
       @ammunition = Ammunition.find(params[:id])
+      @add_amm = @ammunition.additional_ammo
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
