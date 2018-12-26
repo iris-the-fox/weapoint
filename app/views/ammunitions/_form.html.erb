@@ -49,6 +49,10 @@
       <%= f.text_area :note, 'data-provider': :summernote %>
     </div>
   </div>
+  <%= f.fields_for :additional_ammo do |ammo| %>
+    <%= render 'ammo_fields', :f => ammo %>
+  <% end %>
+
   <h2> Add picture </h2>
 
    

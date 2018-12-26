@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_10_135933) do
+ActiveRecord::Schema.define(version: 2018_12_26_103503) do
+
+  create_table "additional_ammos", force: :cascade do |t|
+    t.string "type_bul"
+    t.string "country"
+    t.string "weight"
+    t.string "speed"
+    t.string "energy"
+    t.integer "ammunition_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ammunition_id"], name: "index_additional_ammos_on_ammunition_id"
+  end
 
   create_table "ammunitions", force: :cascade do |t|
     t.string "name"

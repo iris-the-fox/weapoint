@@ -1,6 +1,8 @@
 class Ammunition < ApplicationRecord
 	has_many :pictures, as: :imageable, dependent: :destroy
 	accepts_nested_attributes_for :pictures, reject_if: :all_blank, allow_destroy: true
+  has_one :additional_ammo, dependent: :destroy
+  accepts_nested_attributes_for :additional_ammo, reject_if: :all_blank, allow_destroy: true
 
 	def self.search(params)
   	search_hash = {}

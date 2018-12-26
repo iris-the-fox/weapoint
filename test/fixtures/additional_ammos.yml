@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  country: MyString
+  weight: MyString
+  speed: MyString
+  energy: MyString
+  ammunition: one
+
+two:
+  type: 
+  country: MyString
+  weight: MyString
+  speed: MyString
+  energy: MyString
+  ammunition: two
