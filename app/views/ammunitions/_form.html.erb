@@ -18,43 +18,45 @@
       <%= f.label :name %>
       <%= f.text_field :name %>
     </div>
-  
-    <div class="field">
-      <%= f.label :type_bul %>
-      <%= f.text_field :type_bul %>
-    </div>
-  
-    <div class="field">
-      <%= f.label :country %>
-      <%= f.text_field :country %>
-    </div>
-  
-    <div class="field">
-      <%= f.label :weight %>
-      <%= f.number_field :weight %>
-    </div>
-  
-    <div class="field">
-      <%= f.label :speed %>
-      <%= f.number_field :speed %>
-    </div>
-  
-    <div class="field">
-      <%= f.label :energy %>
-      <%= f.number_field :energy %>
-    </div>
-  
+      <div class="row">
+        <div class="column_field">
+          <div class="field">
+            <%= f.label :type_bul %>
+            <%= f.text_field :type_bul %>
+          </div>
+        
+          <div class="field">
+            <%= f.label :country %>
+            <%= f.text_field :country %>
+          </div>
+        
+          <div class="field">
+            <%= f.label :weight %>
+            <%= f.number_field :weight %>
+          </div>
+        
+          <div class="field">
+            <%= f.label :speed %>
+            <%= f.number_field :speed %>
+          </div>
+        
+          <div class="field">
+            <%= f.label :energy %>
+            <%= f.number_field :energy %>
+          </div>
+        </div>
+        <div class="column_field">
+          <%= f.fields_for :additional_ammo do |ammo| %>
+            <%= render 'ammo_fields', :f => ammo %>
+          <% end %>
+        </div>
+      </div>
     <div class="field">
       <%= f.label 'Note' %>
       <%= f.text_area :note, 'data-provider': :summernote %>
     </div>
   </div>
 
-  <h2> Additional info </h2>
-
-  <%= f.fields_for :additional_ammo do |ammo| %>
-    <%= render 'ammo_fields', :f => ammo %>
-  <% end %>
 
   <h2> Add picture </h2>
 
