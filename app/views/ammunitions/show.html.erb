@@ -36,25 +36,25 @@
       <tr class='odd'>
         <td><strong>type:</strong></td>
         <td><%= @ammunition.type_bul %></td>
-        <td><%= auto_link @additional_ammo.type_bul , :html => { :target => '_blank' } unless @additional_ammo.nil? %></td></tr>
+        <td><%= raw h(@additional_ammo.type_bul).bbcode_to_html  %></td></tr>
       <tr class='even'>
         <td><strong>country:</strong></td>
         <td><%= @ammunition.country %></td>
-        <td><%=auto_link  @additional_ammo.country , :html => { :target => '_blank' } unless @additional_ammo.nil? %></td></tr>
+        <td><%=raw h(@additional_ammo.country).bbcode_to_html %></td></tr>
       <tr class='even'>
         <td><strong>weight:</strong></td>
         <td><%= @ammunition.weight %></td>
-        <td><%= auto_link @additional_ammo.weight , :html => { :target => '_blank' } unless @additional_ammo.nil? %></td></tr>
+        <td><%= raw h(@additional_ammo.weight).bbcode_to_html %></td></tr>
       <tr class='odd'>
         <td><strong>speed:</strong></td>
         <td><%= @ammunition.speed %></td>
-        <td><%= auto_link @additional_ammo.speed , :html => { :target => '_blank' } unless @additional_ammo.nil? %></td></tr>
+        <td><%= raw h(@additional_ammo.speed).bbcode_to_html %></td></tr>
       <tr class='even'>
         <td><strong>energy:</strong></td>
         <td><%= @ammunition.energy %></td>
-        <td><%= auto_link @additional_ammo.energy , :html => { :target => '_blank' } unless @additional_ammo.nil? %></td></tr>
+        <td><%= raw h(@additional_ammo.energy).bbcode_to_html %></td></tr>
       
- 
+
     </table>
 
     <p> <%= @ammunition.note.html_safe %></p>
