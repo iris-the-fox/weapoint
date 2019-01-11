@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_11_120102) do
+ActiveRecord::Schema.define(version: 2019_01_11_123429) do
 
   create_table "additional_ammos", force: :cascade do |t|
-    t.string "type_bul", default: "/n"
+    t.string "type_bul", default: "[b] [/b]"
     t.string "country"
     t.string "weight"
     t.string "speed"

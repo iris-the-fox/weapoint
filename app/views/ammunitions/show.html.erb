@@ -36,23 +36,23 @@
       <tr class='odd'>
         <td><strong>type:</strong></td>
         <td><%= @ammunition.type_bul %></td>
-        <td><%= raw h(@additional_ammo.type_bul).bbcode_to_html  %></td></tr>
+        <td><%= raw h(@additional_ammo.type_bul).bbcode_to_html unless @additional_ammo.blank? %></td></tr>
       <tr class='even'>
         <td><strong>country:</strong></td>
         <td><%= @ammunition.country %></td>
-        <td><%=raw h(@additional_ammo.country).bbcode_to_html %></td></tr>
+        <td><%=raw h(@additional_ammo.country).bbcode_to_html unless @additional_ammo.blank?%></td></tr>
       <tr class='even'>
         <td><strong>weight:</strong></td>
         <td><%= @ammunition.weight %></td>
-        <td><%= raw h(@additional_ammo.weight).bbcode_to_html %></td></tr>
+        <td><%= raw h(@additional_ammo.weight).bbcode_to_html unless @additional_ammo.blank?%></td></tr>
       <tr class='odd'>
         <td><strong>speed:</strong></td>
         <td><%= @ammunition.speed %></td>
-        <td><%= raw h(@additional_ammo.speed).bbcode_to_html %></td></tr>
+        <td><%= raw h(@additional_ammo.speed).bbcode_to_html unless @additional_ammo.blank?%></td></tr>
       <tr class='even'>
         <td><strong>energy:</strong></td>
         <td><%= @ammunition.energy %></td>
-        <td><%= raw h(@additional_ammo.energy).bbcode_to_html %></td></tr>
+        <td><%= raw h(@additional_ammo.energy).bbcode_to_html unless @additional_ammo.blank? %></td></tr>
       
 
     </table>

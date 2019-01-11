@@ -19,6 +19,7 @@
         </p>  
         <p> <%= ammunition.note.html_safe %></p>
       </div>
+    <p><%= link_to 'Destroy', ammunition, method: :delete, data: { confirm: 'Are you sure?' } %></p>
     </div>
      
   <% end %>
