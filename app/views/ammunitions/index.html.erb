@@ -9,6 +9,10 @@
       </div>
 
       <div class="column2_inner ">
+        <% if logged_in? %>
+          <%= link_to 'Add new ammunition', new_ammunition_path %>
+        <% end %>
+   
          <% if !@ammunitions.nil? %>
            <%= render 'search_results' %>
         <% else %>

@@ -10,7 +10,10 @@
       </div>
 
       <div class="column2_inner ">
-         <% if !@firearms.nil? %>
+        <% if logged_in? %>
+          <%= link_to 'Add new firearm', new_firearm_path %>
+        <% end %>
+        <% if !@firearms.nil? %>
            <%= render 'search_results' %>
         <% else %>
         <h2> Chose from SPEC list.. </h2>
