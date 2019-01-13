@@ -23,7 +23,7 @@ class AmmunitionsController < ApplicationController
   # GET /ammunitions/1/edit
   def edit
     @ammunition.pictures.build
-    
+    @ammunition.build_additional_ammo if @additional_ammo.nil?
   end
 
   # POST /ammunitions
