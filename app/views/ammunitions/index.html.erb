@@ -32,7 +32,7 @@
                   <%= ammunition.country %><% unless ammunition.country.nil? ||   ammunition.country == ""  %>, <%         end %>
                   <%= ammunition.weight %><% unless ammunition.weight.nil? ||   ammunition.weight == "" %>  kg, <%         end %>
                   <%= ammunition.speed %><% unless ammunition.speed.nil? ||   ammunition.speed == ""%>kg,   <% end %>
-                  <%= ammunition.energy %><% unless ammunition.energy.nil? ||   ammunition.energy == "" %>  , <% end         %>
+                  <%= ammunition.energy %><% unless ammunition.energy.nil? ||   ammunition.energy == "" %><% end         %>
                   </p>  
                   <p> <%= ammunition.note.html_safe %></p>
                 </div>
