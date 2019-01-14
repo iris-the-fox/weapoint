@@ -16,8 +16,35 @@
          <% if !@ammunitions.nil? %>
            <%= render 'search_results' %>
         <% else %>
-        <h2> Chose from SPEC list.. </h2>
-         <% end %>  
+        <h2  class='search_result'> "Обратите внимание на следуюшие модели или что там написать..." </h2>
+          <% @ammos.each do |ammunition| %>
+            <% if ammunition.fixed ==true %>
+              <div class='search_result'>
+                          
+                <%  if ammunition.pictures.first.nil? %>
+                <% else %>
+                  <%= image_tag(ammunition.pictures.first.image.url(:thumb), class: "img_search_result") %>
+                <% end %>
+                <div class ="txt_search_result">
+                  <h3 ><%= link_to ammunition.name, ammunition %></h3>
+                  <p> 
+                  <%= ammunition.type_bul %><% unless ammunition.type_bul.nil? ||   ammunition.type_bul ==   ""%>, <%         end %>
+                  <%= ammunition.country %><% unless ammunition.country.nil? ||   ammunition.country == ""  %>, <%         end %>
+                  <%= ammunition.weight %><% unless ammunition.weight.nil? ||   ammunition.weight == "" %>  kg, <%         end %>
+                  <%= ammunition.speed %><% unless ammunition.speed.nil? ||   ammunition.speed == ""%>kg,   <% end %>
+                  <%= ammunition.energy %><% unless ammunition.energy.nil? ||   ammunition.energy == "" %>  , <% end         %>
+                  </p>  
+                  <p> <%= ammunition.note.html_safe %></p>
+                </div>
+              <p>
+                <%= link_to 'Edit', edit_ammunition_path(ammunition) %> |
+                <%= link_to 'Destroy', ammunition, method: :delete, data: { confirm: 'Are you sure?' } %>  </p>
+            </div>
+          <% end %>
+        <% end %>
+
+          <h2> Chose from SPEC list... </h2>
+        <% end %>  
       </div>
 </div>
 <br>

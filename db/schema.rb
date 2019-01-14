@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_14_095436) do
+ActiveRecord::Schema.define(version: 2019_01_14_111321) do
 
   create_table "additional_ammos", force: :cascade do |t|
     t.string "type_bul", default: "[b] [/b]"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 2019_01_14_095436) do
     t.string "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "fixed"
   end
 
   create_table "comfy_cms_files", force: :cascade do |t|
