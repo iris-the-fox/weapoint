@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_14_115719) do
+ActiveRecord::Schema.define(version: 2019_01_14_120211) do
 
   create_table "additional_ammos", force: :cascade do |t|
     t.string "type_bul"
@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 2019_01_14_115719) do
     t.datetime "updated_at", null: false
     t.float "rate_of_fire"
     t.text "summary"
+    t.boolean "fixed"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
