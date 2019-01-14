@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_11_123429) do
+ActiveRecord::Schema.define(version: 2019_01_14_093629) do
 
   create_table "additional_ammos", force: :cascade do |t|
     t.string "type_bul", default: "[b] [/b]"
@@ -22,6 +22,29 @@ ActiveRecord::Schema.define(version: 2019_01_11_123429) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["ammunition_id"], name: "index_additional_ammos_on_ammunition_id"
+  end
+
+  create_table "additional_fires", force: :cascade do |t|
+    t.string "typearm"
+    t.string "status"
+    t.string "country"
+    t.string "year"
+    t.string "caliber"
+    t.string "action_type"
+    t.string "trigger_type"
+    t.string "barrel_l"
+    t.string "over_l"
+    t.string "over_l_f"
+    t.string "em_w"
+    t.string "l_w"
+    t.string "am_cap"
+    t.string "fr_mat"
+    t.string "stock_type"
+    t.string "rate_of_fire"
+    t.integer "firearm_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["firearm_id"], name: "index_additional_fires_on_firearm_id"
   end
 
   create_table "ammunitions", force: :cascade do |t|
