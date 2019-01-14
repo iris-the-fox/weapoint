@@ -17,10 +17,12 @@ class FirearmsController < ApplicationController
   # GET /firearms/new
   def new
     @firearm = Firearm.new
+    @firearm.build_additional_fire
   end
 
   # GET /firearms/1/edit
   def edit
+    @firearm.build_additional_fire if @additional_fire.nil?
   end
 
   # POST /firearms
@@ -67,12 +69,14 @@ class FirearmsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_firearm
       @firearm = Firearm.find(params[:id])
+      @additional_fire= @firearm.additional_fire
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def firearm_params
       params.require(:firearm).
          permit(:name, :typearm, :atstus, :country, :year, :caliber, :action_type, :trigger_type, :feeding_mech, :barrel_l, :over_l, :over_l_f, :em_w, :l_w, :am_cap, :fr_mat, :stock_type, :rate_of_fire, :summary,
-         pictures_attributes: Picture.attribute_names.map(&:to_sym).push(:_destroy))
+         pictures_attributes: Picture.attribute_names.map(&:to_sym).push(:_destroy)),
+         additional_ammo_attributes: AdditionalAmmo.attribute_names.map(&:to_sym).push(:_destroy))
     end
 end

@@ -102,6 +102,12 @@
     <%= form.text_field :stock_type %>
   </div>
 
+  <div class="column_field">
+          <%= f.fields_for :additional_fire do |fire| %>
+            <%= render 'fire_fields', :f => fire %>
+          <% end %>
+  </div>
+
 
 
   <div class="field">

@@ -3,6 +3,8 @@ class Firearm < ApplicationRecord
   validates :name, presence: true
   validates :name, uniqueness: true
   accepts_nested_attributes_for :pictures, reject_if: :all_blank, allow_destroy: true
+  has_one :additional_fire, dependent: :destroy
+  accepts_nested_attributes_for :additional_fire, reject_if: :all_blank, allow_destroy: true
 
   #def initialize(params)
   	#@typearm = firearms.typearm
