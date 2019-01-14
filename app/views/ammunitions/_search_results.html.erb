@@ -19,7 +19,14 @@
         </p>  
         <p> <%= ammunition.note.html_safe %></p>
       </div>
-    <p><%= link_to 'Destroy', ammunition, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+     <% if logged_in? %>
+    <p>
+
+      <%= link_to 'Edit', edit_ammunition_path(ammunition) %> |
+      <%= link_to 'Destroy', ammunition, method: :delete, data: { confirm: 'Are you sure?' } %>
+        
+    </p>
+    <% end %>
     </div>
      
   <% end %>

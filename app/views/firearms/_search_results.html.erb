@@ -31,6 +31,12 @@
         </p>  
         <p> <%= firearm.summary.html_safe %></p>
       </div>
+      <% if logged_in? %>
+      <p>
+                <%= link_to 'Edit', edit_firearm_path(firearm) %> |
+                <%= link_to 'Destroy', firearm, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </p>
+      <% end %>
     </div>
      
   <% end %>
