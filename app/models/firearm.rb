@@ -1,7 +1,6 @@
 class Firearm < ApplicationRecord
-  has_many :pictures, as: :imageable, dependent: :destroy
   validates :name, presence: true
-  validates :name, uniqueness: true
+  has_many :pictures, as: :imageable, dependent: :destroy
   accepts_nested_attributes_for :pictures, reject_if: :all_blank, allow_destroy: true
   has_one :additional_fire, dependent: :destroy
   accepts_nested_attributes_for :additional_fire, reject_if: :all_blank, allow_destroy: true

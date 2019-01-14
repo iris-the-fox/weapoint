@@ -29,73 +29,73 @@
 <br>
     <table>
       <tr class='odd'>
-        <td><strong>type:</strong></td>
-        <td><%= @firearm.typearm %></td>
-        <td></td></tr>
+        <td class='show_view'><strong>type:</strong></td>
+        <td class='show_view'><%= @firearm.typearm %></td>
+        <td class='show_view'><%= raw h(@additional_fire.typearm).bbcode_to_html unless @additional_fire.blank?%></td></tr>
       <tr class='even'>
-        <td><strong>status:</strong></td>
-        <td><%= @firearm.atstus %></td>
-        <td></td></tr>
+        <td class='show_view'><strong>status:</strong></td>
+        <td class='show_view'><%= @firearm.atstus %></td>
+        <td class='show_view'><%= raw h(@additional_fire.status).bbcode_to_html unless @additional_fire.blank?%></td></tr>
       <tr class='odd'>
-        <td><strong>country:</strong></td>
-        <td><%= @firearm.country %></td>
-        <td></td></tr>
+        <td class='show_view'><strong>country:</strong></td>
+        <td class='show_view'><%= @firearm.country %></td>
+        <td class='show_view'><%= raw h(@additional_fire.country).bbcode_to_html unless @additional_fire.blank?%></td></tr>
       <tr class='even'>
-        <td><strong>year of appearance:</strong></td>
-        <td><%= @firearm.year %></td>
-        <td></td></tr>
+        <td class='show_view'><strong>year of appearance:</strong></td>
+        <td class='show_view'><%= @firearm.year %></td>
+        <td class='show_view'><%= raw h(@additional_fire.year).bbcode_to_html unless @additional_fire.blank?%></td></tr>
       <tr class='odd'>
-        <td><strong>caliber:</strong></td>
-        <td><%= @firearm.caliber %></td>
-        <td></td></tr>
+        <td class='show_view'><strong>caliber:</strong></td>
+        <td class='show_view'><%= @firearm.caliber %></td>
+        <td class='show_view'><%= raw h(@additional_fire.caliber).bbcode_to_html unless @additional_fire.blank?%></td></tr>
       <tr class='even'>
-        <td><strong>action type:</strong></td>
-        <td><%= @firearm.action_type %></td>
-        <td></td></tr>
+        <td class='show_view'><strong>action type:</strong></td>
+        <td class='show_view'><%= @firearm.action_type %></td>
+        <td class='show_view'><%= raw h(@additional_fire.action_type).bbcode_to_html unless @additional_fire.blank?%></td></tr>
       <tr class='odd'>
-        <td><strong>trigger type:</strong></td>
-        <td><%= @firearm.trigger_type %></td>
-        <td></td></tr>
+        <td class='show_view'><strong>trigger type:</strong></td>
+        <td class='show_view'><%= @firearm.trigger_type %></td>
+        <td class='show_view'><%= raw h(@additional_fire.trigger_type).bbcode_to_html unless @additional_fire.blank?%></td></tr>
       <tr class='even'>
-        <td><strong>feeding mechanism:</strong></td>
-        <td><%= @firearm.feeding_mech %></td>
-        <td></td></tr>
+        <td class='show_view'><strong>feeding mechanism:</strong></td>
+        <td class='show_view'><%= @firearm.feeding_mech %></td>
+        <td class='show_view'><%= raw h(@additional_fire.feeding_mech).bbcode_to_html unless @additional_fire.blank?%></td></tr>
       <tr class='odd'>
-        <td><strong>barrel length:</strong></td>
-        <td><%= @firearm.barrel_l %></td>
-        <td></td></tr>
+        <td class='show_view'><strong>barrel length:</strong></td>
+        <td class='show_view'><%= @firearm.barrel_l %></td>
+        <td class='show_view'><%= raw h(@additional_fire.barrel_l).bbcode_to_html unless @additional_fire.blank?%></td></tr>
       <tr class='even'>
-        <td><strong>overall length:</strong></td>
-        <td><%= @firearm.over_l %></td>
-        <td></td></tr>
+        <td class='show_view'><strong>overall length:</strong></td>
+        <td class='show_view'><%= @firearm.over_l %></td>
+        <td class='show_view'><%= raw h(@additional_fire.over_l).bbcode_to_html unless @additional_fire.blank?%></td></tr>
       <tr class='even'>
-        <td><strong>overall length (folded stock):</strong></td>
-        <td><%= @firearm.over_l_f %></td>
-        <td></td></tr>
+        <td class='show_view'><strong>overall length (folded stock):</strong></td>
+        <td class='show_view'><%= @firearm.over_l_f %></td>
+        <td class='show_view'><%= raw h(@additional_fire.over_l_f).bbcode_to_html unless @additional_fire.blank?%></td></tr>
       <tr class='odd'>
-        <td><strong>empty weight:</strong></td>
-        <td><%= @firearm.em_w %></td
-          ><td></td></tr>
+        <td class='show_view'><strong>empty weight:</strong></td>
+        <td class='show_view'><%= @firearm.em_w %></td
+          ><td class='show_view'><%= raw h(@additional_fire.em_w).bbcode_to_html unless @additional_fire.blank?%></td></tr>
       <tr class='even'>
-        <td><strong>loaded weight:</strong></td>
-        <td><%= @firearm.l_w %></td>
-        <td></td></tr>
+        <td class='show_view'><strong>loaded weight:</strong></td>
+        <td class='show_view'><%= @firearm.l_w %></td>
+        <td class='show_view'><%= raw h(@additional_fire.l_w).bbcode_to_html unless @additional_fire.blank?%></td></tr>
       <tr class='odd'>
-        <td><strong>ammunition capacity:</strong></td>
-        <td><%= @firearm.am_cap %></td>
-        <td></td></tr>
+        <td class='show_view'><strong>ammunition capacity:</strong></td>
+        <td class='show_view'><%= @firearm.am_cap %></td>
+        <td class='show_view'><%= raw h(@additional_fire.am_cap).bbcode_to_html unless @additional_fire.blank?%></td></tr>
       <tr class='even'>
-        <td><strong>frame material:</strong></td>
-        <td><%= @firearm.fr_mat %></td>
-        <td></td></tr>
+        <td class='show_view'><strong>frame material:</strong></td>
+        <td class='show_view'><%= @firearm.fr_mat %></td>
+        <td class='show_view'><%= raw h(@additional_fire.fr_mat).bbcode_to_html unless @additional_fire.blank?%></td></tr>
       <tr class='odd'>
-        <td><strong>stock type:</strong></td>
-        <td><%= @firearm.stock_type %></td>
-        <td></td></tr>
+        <td class='show_view'><strong>stock type:</strong></td>
+        <td class='show_view'><%= @firearm.stock_type %></td>
+        <td class='show_view'><%= raw h(@additional_fire.stock_type).bbcode_to_html unless @additional_fire.blank?%></td></tr>
       <tr class='even'>
-        <td><strong>rate of fire:</strong></td>
-        <td><%= @firearm.rate_of_fire %></td>
-        <td></td></tr>
+        <td class='show_view'><strong>rate of fire:</strong></td>
+        <td class='show_view'><%= @firearm.rate_of_fire %></td>
+        <td class='show_view'><%= raw h(@additional_fire.rate_of_fire).bbcode_to_html unless @additional_fire.blank?%></td></tr>
  
     </table>
 

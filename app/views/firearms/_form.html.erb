@@ -1,4 +1,4 @@
-<%= form_with(model: firearm, local: true) do |f| %>
+<%= simple_form_for @firearm, defaults: { required: false } do |f| %>
   <% if firearm.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(firearm.errors.count, "error") %> prohibited this firearm from being saved:</h2>
