@@ -1,4 +1,4 @@
-<%= form_with(model: firearm, local: true) do |form| %>
+<%= form_with(model: firearm, local: true) do |f| %>
   <% if firearm.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(firearm.errors.count, "error") %> prohibited this firearm from being saved:</h2>
@@ -13,93 +13,96 @@
 
 <div class="editing-block">
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="row">
+        <div class="column_field">
+
+  <div class="field">
+    <%= f.label :typearm %>
+    <%= f.text_field :typearm %>
   </div>
 
   <div class="field">
-    <%= form.label :typearm %>
-    <%= form.text_field :typearm %>
+    <%= f.label "Status" %>
+    <%= f.text_field :atstus %>
   </div>
 
   <div class="field">
-    <%= form.label "Status" %>
-    <%= form.text_field :atstus %>
+    <%= f.label :country %>
+    <%= f.text_field :country %>
   </div>
 
   <div class="field">
-    <%= form.label :country %>
-    <%= form.text_field :country %>
+    <%= f.label :year %>
+    <%= f.number_field :year %>
   </div>
 
   <div class="field">
-    <%= form.label :year %>
-    <%= form.number_field :year %>
+    <%= f.label :caliber %>
+    <%= f.text_field :caliber %>
   </div>
 
   <div class="field">
-    <%= form.label :caliber %>
-    <%= form.text_field :caliber %>
+    <%= f.label :action_type %>
+    <%= f.text_field :action_type %>
   </div>
 
   <div class="field">
-    <%= form.label :action_type %>
-    <%= form.text_field :action_type %>
+    <%= f.label :trigger_type %>
+    <%= f.text_field :trigger_type %>
   </div>
 
   <div class="field">
-    <%= form.label :trigger_type %>
-    <%= form.text_field :trigger_type %>
+    <%= f.label :feeding_mech %>
+    <%= f.text_field :feeding_mech %>
   </div>
 
   <div class="field">
-    <%= form.label :feeding_mech %>
-    <%= form.text_field :feeding_mech %>
+    <%= f.label "Barrel length" %>
+    <%= f.number_field :barrel_l %>
   </div>
 
   <div class="field">
-    <%= form.label "Barrel length" %>
-    <%= form.number_field :barrel_l %>
+    <%= f.label "Overall length" %>
+    <%= f.number_field :over_l %>
   </div>
 
   <div class="field">
-    <%= form.label "Overall length" %>
-    <%= form.number_field :over_l %>
+    <%= f.label "Overall length (folded stock)" %>
+    <%= f.number_field :over_l_f %>
   </div>
 
   <div class="field">
-    <%= form.label "Overall length (folded stock)" %>
-    <%= form.number_field :over_l_f %>
+    <%= f.label "Empty weght"%>
+    <%= f.number_field :em_w %>
   </div>
 
   <div class="field">
-    <%= form.label "Empty weght"%>
-    <%= form.number_field :em_w %>
+    <%= f.label "Loaded weght" %>
+    <%= f.number_field :l_w %>
   </div>
 
   <div class="field">
-    <%= form.label "Loaded weght" %>
-    <%= form.number_field :l_w %>
+    <%= f.label "Magazine capacity" %>
+    <%= f.number_field :am_cap %>
   </div>
 
   <div class="field">
-    <%= form.label "Magazine capacity" %>
-    <%= form.number_field :am_cap %>
+    <%= f.label :rate_of_fire %>
+    <%= f.number_field :rate_of_fire, class: :text_field, step: :any %>
   </div>
 
   <div class="field">
-    <%= form.label :rate_of_fire %>
-    <%= form.number_field :rate_of_fire, class: :text_field, step: :any %>
+    <%= f.label "Frame material" %>
+    <%= f.text_field :fr_mat %>
   </div>
 
   <div class="field">
-    <%= form.label "Frame material" %>
-    <%= form.text_field :fr_mat %>
+    <%= f.label :stock_type %>
+    <%= f.text_field :stock_type %>
   </div>
-
-  <div class="field">
-    <%= form.label :stock_type %>
-    <%= form.text_field :stock_type %>
   </div>
 
   <div class="column_field">
@@ -107,24 +110,25 @@
             <%= render 'fire_fields', :f => fire %>
           <% end %>
   </div>
+</div>
 
 
 
   <div class="field">
-    <%= form.label :summary %>
-    <%= form.text_area :summary, 'data-provider': :summernote %>
+    <%= f.label :summary %>
+    <%= f.text_area :summary, 'data-provider': :summernote %>
   </div>
 </div>
-  <%= form.fields_for :pictures do |picture| %>
+  <%= f.fields_for :pictures do |picture| %>
     <%= render 'picture_fields', :f => picture %>
   <% end %>
   <div class='links'>
-    <%= link_to_add_association 'add picture', form, :pictures, class: "like-btn move-right" %>
+    <%= link_to_add_association 'add picture', f, :pictures, class: "like-btn move-right" %>
   </div>
 
 
 
   <div class="actions">
-    <%= form.submit %>
+    <%= f.submit %>
   </div>
 <% end %>
