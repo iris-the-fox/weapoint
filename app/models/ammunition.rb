@@ -4,6 +4,7 @@ class Ammunition < ApplicationRecord
 	accepts_nested_attributes_for :pictures, reject_if: :all_blank, allow_destroy: true
   has_one :additional_ammo, dependent: :destroy
   accepts_nested_attributes_for :additional_ammo, reject_if: :all_blank, allow_destroy: true
+  nilify_blanks :except => [:note]
 
 	def self.search(params)
   	search_hash = {}
