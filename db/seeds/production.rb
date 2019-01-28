@@ -7,4 +7,3 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-load(Rails.root.join( 'db', 'seeds', "#{Rails.env.downcase}.rb"))
