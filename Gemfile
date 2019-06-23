@@ -77,3 +77,4 @@ gem 'cocoon'
 gem 'rails_autolink'
 gem 'bbcoder'
 gem "nilify_blanks"
+gem "cocoon"
